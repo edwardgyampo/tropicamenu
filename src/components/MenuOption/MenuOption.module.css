@@ -1,0 +1,59 @@
+.menuOption {
+  opacity: .9;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.menuOption:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.menuOption:hover {
+  opacity: 1;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.menuOption>* {
+  flex-shrink: 0;
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e4e6eb;
+  color: #333;
+}
+
+.infoIcon {
+  margin-right: 14px;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.actionIcon {
+  background-color: transparent;
+  margin-left: auto;
+}
+
+.label {
+  font-size: 14.6px;
+  pointer-events: none;
+  transition: all ease-in-out 150ms;
+}
+
+.menuOption:hover .label {
+  color: #111;
+}

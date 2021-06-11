@@ -1,0 +1,90 @@
+
+
+
+			
+			<Item label="" onClick={nextHandler}></Item>
+			<Item label="" onClick={prevHandler}></Item>
+			<Item label="" onClick={nextHandler}></Item>
+			<Item label="" onClick={nextHandler}></Item>
+			<Item label="" onClick={nextHandler}></Item>
+			<Item label="" onClick={nextHandler}></Item>
+			<Item label="" onClick={prevHandler}></Item>
+			<Item label="" onClick={nextHandler}></Item>
+			<Item label="" onClick={nextHandler}></Item>
+			<Item label="" onClick={nextHandler}></Item>
+			<Item label="" onClick={nextHandler}></Item>
+
+Bed
+Bed
+
+Bee
+
+Bible
+
+Bible
+
+Bird
+
+Bomb
+
+Book
+
+Boss
+
+Bottle
+
+Bowl
+
+Box
+
+Boy
+
+Brain
+
+Bridge
+
+Butterfly
+
+Button
+
+Cappuccino
+
+Car
+
+Car-race
+
+Carpet
+
+Carrot
+
+Cave
+
+Chair
+
+Chess Board
+
+Chief
+
+Child
+
+Chisel
+
+Chocolates
+
+Church
+
+Church
+
+Circle
+
+Circus
+
+Circus
+
+Clock
+
+Clown
+
+Coffee
+
+Coffee-shop

@@ -1,0 +1,68 @@
+.screen {
+	display: none;
+	border-radius: 10px;
+}
+
+.currentScreen {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.previousScreen,
+.nextScreen {
+	position: absolute;
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.slideInFromRight {
+	animation: slideInFromRight ease-in-out 300ms both;
+}
+
+.slideInFromLeft {
+	animation: slideInFromLeft ease-in-out 300ms both;
+}
+
+.slideOutToLeft {
+	animation: slideOutToLeft ease-in-out 300ms both;
+}
+
+.slideOutToRight {
+	animation: slideOutToRight ease-in-out 300ms both;
+}
+
+@keyframes slideInFromRight {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInFromLeft {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOutToLeft {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes slideOutToRight {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
