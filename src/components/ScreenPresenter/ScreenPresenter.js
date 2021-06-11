@@ -8,7 +8,7 @@ import classes from "./ScreenPresenter.module.css";
 
 const ScreenPresenter = (props) => {
 	const ref = useRef();
-	const [contents, setContents] = useState(props.contents || []);
+	const [contents] = useState(props.contents || []);
 	const [currentScreenIndex, setCurrentScreenIndex] = useState(0);
 	const [size, setSize] = useState({});
 	const [direction, setDirection] = useState(1);
@@ -25,7 +25,7 @@ const ScreenPresenter = (props) => {
 		);
 
 	const previousScreen =
-		currentScreenIndex > 0 ? (
+		currentScreenIndex > 0 && direction > 0 ? (
 			<Screen key={Math.random().toString()} previous>
 				{contents[currentScreenIndex - 1]}
 			</Screen>
@@ -72,11 +72,7 @@ const ScreenPresenter = (props) => {
 			value={{
 				contents,
 				setNextScreenContent: (content) => {
-					setContents((contents) => {
-						let arr = [...contents];
-						arr.splice(currentScreenIndex + 1, 1, content);
-						return arr;
-					});
+					contents.splice(currentScreenIndex + 1, 1, content);
 					nextScreenHandler();
 				},
 				goBack: previousScreenHandler,
