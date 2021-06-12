@@ -22,7 +22,9 @@ const MenuOption = (props) => {
 			<div className={`${classes.icon} ${classes.infoIcon}`}>
 				{props.infoIcon || cogSvg}
 			</div>
-			<label className={classes.label}>{props.label}</label>
+			<label className={classes.label}>
+				{props.label.replace(/\s/g, "\u00a0")}
+			</label>
 			<div className={`${classes.icon} ${classes.actionIcon}`}>
 				{props.content ? caretRightSvg : props.actionIcon}
 			</div>

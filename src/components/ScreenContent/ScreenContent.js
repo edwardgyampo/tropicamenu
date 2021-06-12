@@ -9,7 +9,7 @@ const ScreenContent = (props) => {
   
 	return (
 		<ul className={classes.screenContent}>
-			{props.controls ? <MenuOption infoIcon={caretLeftSvg} label="back" onClick={ctx.goBack}></MenuOption> : ""}
+			{props.controls ? <MenuOption infoIcon={caretLeftSvg} label="Go back" onClick={ctx.goBack}></MenuOption> : ""}
 			{props.children}
 		</ul>
 	);

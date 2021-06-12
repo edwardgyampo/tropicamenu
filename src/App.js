@@ -15,14 +15,14 @@ function App() {
 								<ScreenContent controls>
 									<MenuOption label="Genres"></MenuOption>
 									<MenuOption
-										label="Top&nbsp;5"
+										label="Top 5"
 										content={
 											<ScreenContent controls>
-												<MenuOption label="Metal&nbsp;Gear&nbsp;Solid V"></MenuOption>
-												<MenuOption label="The&nbsp;Witcher&nbsp;3"></MenuOption>
-												<MenuOption label="GTA&nbsp;V"></MenuOption>
-												<MenuOption label="Shadow&nbsp;of&nbsp;The&nbsp;Tomb&nbsp;Raider"></MenuOption>
-												<MenuOption label="God&nbsp;of&nbsp;War"></MenuOption>
+												<MenuOption label="Metal Gear Solid V"></MenuOption>
+												<MenuOption label="The Witcher 3"></MenuOption>
+												<MenuOption label="GTA V"></MenuOption>
+												<MenuOption label="Shadow of The Tomb Raider"></MenuOption>
+												<MenuOption label="God of War"></MenuOption>
 											</ScreenContent>
 										}
 									></MenuOption>
@@ -30,7 +30,12 @@ function App() {
 								</ScreenContent>
 							}
 						></MenuOption>
-						<MenuOption label="Music"></MenuOption>
+						<MenuOption label="Music" content={
+							<ScreenContent controls>
+								<MenuOption label="Genres"></MenuOption>
+								<MenuOption label="Top 10 Hits"></MenuOption>
+							</ScreenContent>
+						}></MenuOption>
 						<MenuOption
 							label="Movies"
 							content={
@@ -39,7 +44,27 @@ function App() {
 										label="Genres"
 										content={
 											<ScreenContent controls>
-												<MenuOption label="Animation"></MenuOption>
+												<MenuOption label="Animation &amp; Anime" content={
+													<ScreenContent controls>
+														<MenuOption label="Naruto" content={
+															<ScreenContent controls>
+																<MenuOption label="Characters" content={
+																	<ScreenContent controls>
+																		<MenuOption label="Naruto"></MenuOption>
+																		<MenuOption label="Sasuke"></MenuOption>
+																		<MenuOption label="Madara"></MenuOption>
+																		<MenuOption label="Hashirama"></MenuOption>
+																		<MenuOption label="Obito"></MenuOption>
+																	</ScreenContent>
+																}></MenuOption>
+															</ScreenContent>
+														}></MenuOption>
+														<MenuOption label="Avatar"></MenuOption>
+														<MenuOption label="Death Note"></MenuOption>
+														<MenuOption label="Boruto"></MenuOption>
+														<MenuOption label="One Piece"></MenuOption>
+													</ScreenContent>
+												}></MenuOption>
 												<MenuOption label="Comedy"></MenuOption>
 												<MenuOption label="Crime"></MenuOption>
 												<MenuOption label="Documentary"></MenuOption>
@@ -50,6 +75,7 @@ function App() {
 								</ScreenContent>
 							}
 						></MenuOption>
+						<MenuOption label="Settings"></MenuOption>
 					</ScreenContent>,
 				]}
 			></Menu>
