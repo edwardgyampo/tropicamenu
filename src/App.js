@@ -44,7 +44,7 @@ function App() {
 										label="Genres"
 										content={
 											<ScreenContent controls>
-												<MenuOption label="Animation &amp; Anime" content={
+												<MenuOption label="Anime" content={
 													<ScreenContent controls>
 														<MenuOption label="Naruto" content={
 															<ScreenContent controls>
