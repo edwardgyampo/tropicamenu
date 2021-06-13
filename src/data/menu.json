@@ -1,0 +1,62 @@
+[
+	{ "label": "Updates" },
+	{
+		"label": "Games",
+		"options": [
+			{ "label": "Genres" },
+			{
+				"label": "Top 5",
+				"options": [
+					{ "label": "Metal Gear Solid V" },
+					{ "label": "The Witcher 3" },
+					{ "label": "GTA V" },
+					{ "label": "Shadow of The Tomb Raider" },
+					{ "label": "God of War" }
+				]
+			},
+			{ "label": "Upcoming" }
+		]
+	},
+	{
+		"label": "Music",
+		"options": [{ "label": "Genres" }, { "label": "Top 10 Hits" }]
+	},
+	{
+		"label": "Movies",
+		"options": [
+			{
+				"label": "Genres",
+				"options": [
+					{
+						"label": "Anime",
+						"options": [
+							{
+								"label": "Naruto",
+								"options": [
+									{
+										"label": "Characters",
+										"options": [
+											{ "label": "Naruto" },
+											{ "label": "Sasuke" },
+											{ "label": "Madara" },
+											{ "label": "Hashirama" },
+											{ "label": "Obito" }
+										]
+									}
+								]
+							},
+							{ "label": "Death Note" },
+							{ "label": "Boruto" },
+							{ "label": "One Piece" }
+						]
+					},
+					{ "label": "Comedy" },
+					{ "label": "Crime" },
+					{ "label": "Documentary" },
+					{ "label": "Drama" }
+				]
+			}
+		]
+	},
+	{ "label": "Settings" }
+]

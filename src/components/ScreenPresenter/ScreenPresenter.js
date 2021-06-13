@@ -10,7 +10,10 @@ const Directions = { Forward: 1, Backward: -1 };
 
 const ScreenPresenter = (props) => {
 	const ref = useRef();
+
+	// Contents: At least one ScreenContent is required to present.
 	const [contents] = useState(props.contents || []);
+	
 	const [currentScreenIndex, setCurrentScreenIndex] = useState(0);
 	const [size, setSize] = useState({});
 	const [direction, setDirection] = useState(Directions.Forward);

@@ -34,11 +34,56 @@ const DUMMY_CONTENTS = [
 	</ScreenContent>,
 ];
 
+let getContentTree = (data_i) => {
+	return (
+		<MenuOption
+			key={Math.random().toString()}
+			label={data_i.label}
+			infoIcon={data_i.infoIcon}
+			actionIcon={data_i.actionIcon}
+			content={
+				data_i.options && (
+					<ScreenContent controls>
+						{data_i.options &&
+							data_i.options.map((data_j) => (
+								<MenuOption
+									key={Math.random().toString()}
+									label={data_j.label}
+									infoIcon={data_j.infoIcon}
+									actionIcon={data_j.actionIcon}
+									content={
+										data_j.options && (
+											<ScreenContent controls>
+												{data_j.options.map((option) => getContentTree(option))}
+											</ScreenContent>
+										)
+									}
+								></MenuOption>
+							))}
+					</ScreenContent>
+				)
+			}
+		></MenuOption>
+	);
+};
+
+let contentsFromData = (data) => {
+	return [
+		<ScreenContent>
+			{data.map((initial_option) => getContentTree(initial_option))}
+		</ScreenContent>,
+	];
+};
+
 const Menu = (props) => {
 	return (
 		<div className={classes.menu}>
 			<ScreenPresenter
-				contents={props.contents || DUMMY_CONTENTS}
+				contents={
+					(props.data && contentsFromData(props.data)) ||
+					props.contents ||
+					DUMMY_CONTENTS
+				}
 			></ScreenPresenter>
 		</div>
 	);
