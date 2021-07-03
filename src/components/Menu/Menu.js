@@ -44,22 +44,7 @@ let getContentTree = (data_i) => {
 			content={
 				data_i.options && (
 					<ScreenContent controls>
-						{data_i.options &&
-							data_i.options.map((data_j) => (
-								<MenuOption
-									key={Math.random().toString()}
-									label={data_j.label}
-									infoIcon={data_j.infoIcon}
-									actionIcon={data_j.actionIcon}
-									content={
-										data_j.options && (
-											<ScreenContent controls>
-												{data_j.options.map((option) => getContentTree(option))}
-											</ScreenContent>
-										)
-									}
-								></MenuOption>
-							))}
+						{data_i.options.map((option) => getContentTree(option))}
 					</ScreenContent>
 				)
 			}
