@@ -36,8 +36,8 @@ const DUMMY_CONTENTS = [
 
 let getContentTree = (data) => {
 	if (!data) return null;
-	
-	const { options } = data;
+
+	const { label, infoIcon, actionIcon, options } = data;
 
 	const content = options && <ScreenContent controls>
 		{options.map((option) => getContentTree(option))}
@@ -46,9 +46,9 @@ let getContentTree = (data) => {
 	return (
 		<MenuOption
 			key={Math.random().toString()}
-			label={data.label}
-			infoIcon={data.infoIcon}
-			actionIcon={data.actionIcon}
+			label={label}
+			infoIcon={infoIcon}
+			actionIcon={actionIcon}
 			content={content}
 		></MenuOption>
 	);
