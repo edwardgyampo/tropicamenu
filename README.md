@@ -2,6 +2,10 @@
 
 My first ever react component. Memories :)
 
+Highlights:
+- Animated Menu Screens
+- Simple tree-like options data
+
 [Preview](https://tropicamenu.netlify.app/)
 
 <picture>
