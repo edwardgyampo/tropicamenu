@@ -1,7 +1,7 @@
 import cogSvg from "../../svg/cog";
-import caretRightSvg from "../../svg/caret-right.js";
+import caretRightSvg from "../../svg/caret-right";
 import classes from "./MenuOption.module.css";
-import ScreenPresenterContext from "../ScreenPresenterContext/ScreenPresenterContext.js";
+import ScreenPresenterContext from "../ScreenPresenterContext/ScreenPresenterContext";
 import { useContext } from "react";
 
 const MenuOption = (props) => {

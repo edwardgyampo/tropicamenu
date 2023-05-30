@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import caretLeftSvg from "../../svg/caret-left.js";
+import caretLeftSvg from "../../svg/caret-left";
 import MenuOption from "../MenuOption/MenuOption";
 import ScreenPresenterContext from "../ScreenPresenterContext/ScreenPresenterContext";
 import classes from "./ScreenContent.module.css";
