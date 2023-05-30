@@ -3,8 +3,9 @@
 My first ever react component. Memories :)
 
 Highlights:
-- Animated Menu Screens
 - Simple tree-like options data
+- Menu size transition
+- MenuScreen animation
 
 [Preview](https://tropicamenu.netlify.app/)
 
