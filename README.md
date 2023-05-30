@@ -1,6 +1,6 @@
 # tropicamenu
 
-<span style="color: yellow;">My first ever react component. Memories :)</span>
+My first ever react component. Memories :)
 
 Highlights:
 - Simple tree-like options data
