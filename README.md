@@ -1,3 +1,3 @@
 # tropicamenu
 
-[View Demo](https://tropicamenu.herokuapp.com)
+[View Demo](https://tropicamenu.netlify.app/)
