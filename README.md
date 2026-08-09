@@ -3,10 +3,13 @@
 My first ever react component. Memories :)
 
 Highlights:
-- Simple tree-like options data
-- Menu size transition
-- MenuScreen animation
-
+- Simple tree-like options data.
+- Unlimited menu depth.
+- "debug" prop toggles debug styles.
+- "nerd" prop toggles past/future breadcrumbs.
+- Menu size transition.
+- Menu screen animation.
+  
 [Preview](https://tropicamenu.netlify.app/)
 
 <picture>
