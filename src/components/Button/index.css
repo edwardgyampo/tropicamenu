@@ -1,0 +1,43 @@
+.Button {
+    display: inline-flex;
+    column-gap: .2em;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    --border-width: .1rem;
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: hsl(from var(--background-color) h s calc(l + 10));
+    border-radius: .5em;
+    background-color: hsl(from var(--background-color) h s calc(l + 5));
+    transition: background-color 250ms, color 250ms ease-out;
+}
+
+.Button:hover {
+    background-color: hsl(from var(--background-color) h s calc(l + 8));
+    color: hsl(from var(--color) h s calc(l - 16));
+}
+
+.Button:active {
+    background-color: hsl(from var(--background-color) h s calc(l + 3));
+    color: hsl(from var(--color) h s calc(l - 24));
+}
+
+.Button:disabled {
+    pointer-events: none;
+    background-color: hsl(from var(--background-color) h s calc(l + 4));
+    border-color: hsl(from var(--background-color) h s calc(l + 6));
+}
+
+.Button:where(:not(.Button--IconButton)) {
+    padding: 1em 1.4em;
+}
+
+.Button--IconButton {
+    width: calc(1em + var(--border-width));
+    height: calc(1em + var(--border-width));
+    font-size: 2.4em;
+    border-radius: .5rem;
+}

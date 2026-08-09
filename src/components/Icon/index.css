@@ -1,0 +1,10 @@
+.Icon {
+    display: inline-flex;
+}
+
+.Icon svg {
+    width: 1em;
+    height: 1em;
+    outline: none;
+    fill: currentColor;
+}

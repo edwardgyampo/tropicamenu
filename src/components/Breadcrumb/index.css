@@ -1,0 +1,46 @@
+.Breadcrumb {
+    display: flex;
+    flex-direction: column;
+    row-gap: .2em;
+    border-width: .1rem;
+    border-style: solid;
+    border-color: hsl(from var(--background-color) h s calc(l + 10));
+    background-color: hsl(from var(--background-color) h s calc(l + 2));
+    border-radius: .5em;
+    overflow: hidden;
+}
+
+.Breadcrumb__name {
+    text-transform: uppercase;
+    font-size: .6em;
+    opacity: .6;
+    padding: .4em;
+    background-color: red;
+    background-color: hsl(from var(--background-color) h s calc(l + 6));
+    border-bottom-width: .1rem;
+    border-bottom-style: solid;
+    border-color: hsl(from var(--background-color) h s calc(l + 10));
+}
+
+.Breadcrumb__list {
+    display: flex;
+    list-style: none;
+    gap: .1em;
+    width: 100%;
+    overflow-x: scroll;
+    direction: rtl;
+    padding-top: .2em;;
+    padding-bottom: .4em;
+    padding-left: 20%;
+    padding-right: .2em;
+}
+
+.Breadcrumb__item {
+    flex-shrink: 0;
+}
+
+.Breadcrumb__button,
+.Breadcrumb__separator {
+    display: inline-flex;
+    font-size: .6em;
+}

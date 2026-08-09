@@ -1,0 +1,118 @@
+.Menu {
+    background-color: hsl(from var(--background-color) h s calc(l + 9));
+    border-radius: .5em;
+    overflow: hidden;
+}
+
+.Menu--debug .Screen {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.Menu--debug .Screen--back {
+    border-color: hsl(103, 100%, 60%);
+}
+
+.Menu--debug .Screen--current {
+    border-color: hsl(227 100% 60%);
+}
+
+.Menu--debug .Screen--next {
+    border-color: hsl(0 100% 60%);
+}
+
+.Menu__sectionForNerds {
+    padding: .1rem;
+}
+
+.Menu__sectionForNerds:not(.Menu--nerd .Menu__sectionForNerds) {
+    display: none;
+}
+
+.Menu__wrapper {
+    width: var(--width);
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: .4em;
+    transition-property: width;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+}
+
+.Menu__screens {
+    position: relative;
+    display: flex;
+    height: var(--height, 0px);
+    transition-property: height;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+    overflow: hidden;
+}
+
+.MenuBody {
+    padding: .4em;
+}
+
+.MenuHead {
+    min-width: 10em; /* Implicit min-width for .Menu since .Menu size is derived from .Screen--current size, and .Screen-current contains .MenuHead .*/
+    padding: .5em 1em;
+}
+
+.MenuHead {
+    background-color: hsl(from var(--background-color) h s calc(l + 5));
+    border-bottom-width: .1rem;
+    border-bottom-style: solid;
+    border-color: hsl(from var(--background-color) h s calc(l + 10));
+}
+
+.Menu__builtinList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: .4em;
+    padding: .2em;
+    border-radius: .5em;
+    background-color: hsl(from var(--background-color) h s calc(l + 2));
+}
+
+.Menu__item {
+    width: 100%;
+}
+
+.Menu__itemButton {
+    width: 100%;
+}
+
+.MenuTitle {
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: .05em;
+}
+
+.Menu__hr {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-top: .1em solid;
+    border-color: hsl(from var(--background-color) h s calc(l + 6));
+}
+
+.Menu__breadcrumbs {
+    display: flex;
+    flex-direction: column;
+    row-gap: .4em;
+}
+
+.Menu__navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-left: .2rem;
+    padding-right: .2rem;
+}
+
+.Menu__actionArea {
+    padding-top: .2rem;
+    padding-left: .2rem;
+    align-self: flex-start;
+}

@@ -1,7 +1,0 @@
-.screenPresenter {
-  position: relative;
-  display: inline-flex;
-  border-radius: 10px;
-  transition: all ease-in-out 300ms;
-  overflow: hidden;
-}
