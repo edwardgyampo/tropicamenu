@@ -1,7 +1,12 @@
 {
   "name": "tropicamenu",
   "private": true,
-  "version": "0.0.0",
+  "author": {
+    "email": "egyampo0101@gmail.com",
+    "name": "Edward Gyampo",
+    "url": "https://www.linkedin.com/in/edwardgyampo/"
+  },
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
