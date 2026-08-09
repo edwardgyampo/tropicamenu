@@ -1,8 +1,8 @@
 # tropicamenu
 
-My first ever React.js component built from scratch. Memories :)
+My first ever React.js component built from scratch.
 I created tropicamenu to test my understanding when I first learnt React.js.
-I've rewritten it to make it a bit better :)
+I've rewritten it to make it a bit better. Memories :)
 
 Highlights:
 - Simple tree-like options data.
