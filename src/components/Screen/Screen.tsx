@@ -1,8 +1,8 @@
-import "./index.css";
 import type { AnimationEventHandler } from "react";
 import type { JSX } from "react/jsx-runtime";
 import type { useNavigation } from "../../lib/navigation/useNavigation";
-import { GyampoComponent, type GyampoComponentProps } from "../Component";
+import { GyampoComponent, type GenericComponentProps } from "../Component";
+import "./index.css";
 
 export type ScreenProps = {
     title: string,
@@ -11,7 +11,14 @@ export type ScreenProps = {
     container: React.RefObject<HTMLDivElement | null>
 }
 
-export const Screen = (props: GyampoComponentProps<ScreenProps>) => {
+export type ScreenComponentProps =
+    Omit<
+        GenericComponentProps<"div">,
+        keyof ScreenProps
+    > & ScreenProps;
+
+
+export const Screen = (props: ScreenComponentProps) => {
     const { classNameList = [], container, content, nav } = props;
 
     const onAnimationEnd: AnimationEventHandler = _ => {
@@ -21,6 +28,7 @@ export const Screen = (props: GyampoComponentProps<ScreenProps>) => {
     };
 
     return <GyampoComponent
+        ref={props.ref}
         classNameList={[...classNameList, "Screen"]}
         onAnimationEnd={onAnimationEnd}>
         {content}

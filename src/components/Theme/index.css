@@ -16,8 +16,14 @@
 
   color-scheme: light dark;
 
-  background-color: hsl(var(--background-color-hsl));
-  color: hsl(var(--color-hsl));
+  --background-color-h: 18deg;
+  --background-color-s: 14%;
+  --background-color-l: 90%;
+  --background-color-hsl: var(--background-color-h) var(--background-color-s) var(--background-color-l);
+  --background-color: hsl(var(--background-color-hsl));
+
+  background-color: hsl(from var(--background-color) h s calc(l - 4));
+  color: var(--color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,4 +40,4 @@
     --background-color-hsl: var(--background-color-h) var(--background-color-s) var(--background-color-l);
     --background-color: hsl(var(--background-color-hsl));
   }
-}
+} 

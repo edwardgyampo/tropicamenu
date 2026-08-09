@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import type { ListItem } from "../../lib/list";
 import { useNavigation } from "../../lib/navigation/useNavigation";
 import { Breadcrumb, type BreadcrumbItem } from "../Breadcrumb";
@@ -26,6 +26,7 @@ export type MenuProps = {
 export const Menu = (props: MenuProps) => {
     const { root, debug = false, nerd = false } = props;
     const ref = useRef<HTMLDivElement>(null);
+    const currentScreenRef = useRef<HTMLDivElement>(null);
     const nav = useNavigation({ root });
 
     useEffect(() => {
@@ -40,16 +41,28 @@ export const Menu = (props: MenuProps) => {
         nav.state.present
     ]);
 
-    useEffect(() => {
-        if (!ref.current) return;
-        const current = ref.current.querySelector(".Menu__screens .Screen--current");
-        const rect = current!.getBoundingClientRect();
-        const width = `${Math.ceil(rect.width)}px`;
-        const height = `${Math.ceil(rect.height)}px`;
-        ref.current.style?.setProperty("--width", width);
-        ref.current.style?.setProperty("--height", height);
+    useLayoutEffect(() => {
+        const currentScreen = currentScreenRef.current;
+        if (!ref.current || !currentScreen) return;
+        
+        const updateSize = () => {
+            if (!ref.current || !currentScreen) return;
+            const width = `${Math.ceil(currentScreen!.getBoundingClientRect().width)}px`;
+            const height = `${Math.ceil(currentScreen!.getBoundingClientRect().height)}px`;
+            console.log(width);
+            ref.current.style?.setProperty("--width", width);
+            ref.current.style?.setProperty("--height", height);
+        };
+
+        updateSize();
+
+        const observer = new ResizeObserver(updateSize);
+        observer.observe(currentScreen);
+
+        return () => observer.disconnect();
     }, [
         ref.current,
+        currentScreenRef.current,
         nav.state.present
     ]);
 
@@ -92,14 +105,14 @@ export const Menu = (props: MenuProps) => {
                     variant={ButtonVariants.IconButton}
                     onClick={() => nav.goBack()}
                     disabled={!nav.hasPastItems()}>
-                    <Icon name="NavigateBefore"/>
+                    <Icon name="NavigateBefore" />
                 </Button>
 
                 <Button
                     variant={ButtonVariants.IconButton}
                     onClick={() => nav.goFoward()}
                     disabled={!nav.hasFutureItems()}>
-                    <Icon name="NavigateNext"/>
+                    <Icon name="NavigateNext" />
                 </Button>
             </div>
 
@@ -113,6 +126,7 @@ export const Menu = (props: MenuProps) => {
                     content={<MenuContent nav={nav} item={nav.backItem} />} />}
 
                 {nav.currentItem && <Screen
+                    ref={currentScreenRef}
                     classNameList={["Screen--current", "Menu__screen"]}
                     title={nav.currentItem.name}
                     nav={nav}

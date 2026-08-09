@@ -7,16 +7,21 @@ export type GyampoComponentProps<T = {}> = T & {
     classNameList?: string[]
 }
 
-type GenericProps<T extends React.ElementType> = GyampoComponentProps
+export type GenericComponentProps<T extends React.ElementType> =
+    GyampoComponentProps
     & { as?: T }
-    & Omit<React.ComponentPropsWithRef<T>, keyof GyampoComponentProps>
+    & Omit<
+        React.ComponentPropsWithRef<T>,
+        keyof GyampoComponentProps
+    >;
 
-export const GyampoComponent = <T extends React.ElementType = "div">(props: GenericProps<T>) => {
+export const GyampoComponent = <T extends React.ElementType = "div">(props: GenericComponentProps<T>) => {
     const ElementType = props.as || "div";
 
     const { classNameList, children, className, ...builtinProps } = props;
 
     return <ElementType
+        ref={props.ref}
         {...builtinProps}
         className={compoundClassName([
             "Component",

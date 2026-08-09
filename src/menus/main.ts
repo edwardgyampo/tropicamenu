@@ -106,7 +106,6 @@ export const MAIN_MENU = {
         {
           name: 'Artificial Intelligence',
           list: [
-            { name: 'Artificial Intelligence' },
             { name: 'Machine Learning' },
             { name: 'Neural Networks' },
             { name: 'Natural Language Processing' },

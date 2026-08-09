@@ -8,7 +8,8 @@ import { GyampoComponent, type GyampoComponentProps } from "../Component";
 export const ButtonVariants = {
     StandardButton: "StandardButton",
     TextButton: "TextButton",
-    IconButton: "IconButton"
+    IconButton: "IconButton",
+    StandardButtonReversed: "StandardButtonReversed"
 } as const;
 
 type ButtonVariants = {
@@ -33,8 +34,15 @@ export const Button = (props: GyampoComponentProps<ButtonProps>) => {
         ...builtinProps
     } = props;
 
-    const hasText = (variant === "StandardButton" || variant === "TextButton") && text;
-    const hasIcon = (variant === "StandardButton" || variant === "IconButton") && icon;
+    const hasText = (variant === "StandardButton"
+        || variant === "StandardButtonReversed"
+        || variant === "TextButton"
+    ) && text;
+
+    const hasIcon = (variant === "StandardButton"
+        || variant === "StandardButtonReversed"
+        || variant === "IconButton"
+    ) && icon;
 
     return <GyampoComponent
         {...builtinProps}
@@ -42,7 +50,7 @@ export const Button = (props: GyampoComponentProps<ButtonProps>) => {
         classNameList={[...classNameList, "Button", variant ? `Button--${variant}` : ""]}>
 
         {children || <>
-            {hasIcon && icon && <Icon name={icon} />}
+            {hasIcon && icon && <Icon name={icon} classNameList={["Button__icon"]} />}
 
             {hasText
                 && <span

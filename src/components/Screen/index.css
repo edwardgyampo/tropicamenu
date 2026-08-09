@@ -10,8 +10,8 @@
     border-style: solid;
     border-radius: .5rem;
     border-color: hsl(from var(--background-color) h s calc(l + 10));
-    overflow: hidden; /* .Screen--current should show if and only if direction is set to indicate animation is active. */
-    visibility: hidden; 
+    overflow: hidden; 
+    visibility: hidden; /* .Screen--current should show if and only if direction is set to indicate animation is active. */
 }
 
 .Navigation--Forward .Screen,

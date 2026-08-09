@@ -2,7 +2,7 @@
     display: inline-flex;
     column-gap: .2em;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     cursor: pointer;
     outline: none;
     border: none;
@@ -13,6 +13,7 @@
     border-radius: .5em;
     background-color: hsl(from var(--background-color) h s calc(l + 5));
     transition: background-color 250ms, color 250ms ease-out;
+    box-shadow: 0 0 2px hsl(0 0 0 / 50%);
 }
 
 .Button:hover {
@@ -31,13 +32,27 @@
     border-color: hsl(from var(--background-color) h s calc(l + 6));
 }
 
-.Button:where(:not(.Button--IconButton)) {
-    padding: 1em 1.4em;
+.Button--TextButton {
+    padding: .4em;
+    justify-content: center;
+}
+
+.Button--StandardButton {
+    padding: .2em .4em .2em .2em;
+}
+
+.Button--StandardButtonReversed {
+    flex-direction: row-reverse;
+    padding: .2em 0 .2em .4em;
 }
 
 .Button--IconButton {
     width: calc(1em + var(--border-width));
     height: calc(1em + var(--border-width));
-    font-size: 2.4em;
+    font-size: 1.8em;
     border-radius: .5rem;
+}
+
+.Button__icon {
+    font-size: 1.5em;
 }

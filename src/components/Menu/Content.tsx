@@ -1,7 +1,7 @@
 import type { MouseEventHandler } from "react";
 import type { ListItem } from "../../lib/list";
 import type { useNavigation } from "../../lib/navigation/useNavigation";
-import { Button } from "../Button";
+import { Button, ButtonVariants, type ButtonProps } from "../Button";
 import { MenuHead } from "./Head";
 
 export type MenuContentProps = {
@@ -20,6 +20,15 @@ export const MenuContent = ({ item, nav }: MenuContentProps) => {
         nav.select(itemName);
     };
 
+    const extraButtonProps = (item: ListItem): ButtonProps =>
+        item.list && item.list.length > 0
+            ? {
+                variant: ButtonVariants.StandardButtonReversed,
+                icon: "NavigateNext",
+                onClick: onClickItem
+            }
+            : { variant: ButtonVariants.TextButton };
+
 
     return <div className="MenuContent">
 
@@ -32,7 +41,7 @@ export const MenuContent = ({ item, nav }: MenuContentProps) => {
                         key={item.name}
                         className="Menu__item">
                         <Button
-                            onClick={onClickItem}
+                            {...extraButtonProps(item)}
                             text={item.name}
                             classNameList={[
                                 "Menu__itemButton"
