@@ -1,4 +1,5 @@
 .Button {
+    font-size: 1.2em;
     display: inline-flex;
     column-gap: .2em;
     align-items: center;
@@ -33,26 +34,28 @@
 }
 
 .Button--TextButton {
-    padding: .4em;
+    padding: .5em .8em;
     justify-content: center;
 }
 
 .Button--StandardButton {
-    padding: .2em .4em .2em .2em;
+    padding: .5em .8em .5em .2em;
 }
 
 .Button--StandardButtonReversed {
     flex-direction: row-reverse;
-    padding: .2em 0 .2em .4em;
+    padding: .5em .2em .5em .8em;
 }
 
 .Button--IconButton {
-    width: calc(1em + var(--border-width));
-    height: calc(1em + var(--border-width));
-    font-size: 1.8em;
+    padding: .5em;
     border-radius: .5rem;
 }
 
 .Button__icon {
-    font-size: 1.5em;
+    /* font-size: 2.2em; */
+}
+
+.Button__text {
+    
 }

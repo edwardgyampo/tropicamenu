@@ -1,9 +1,7 @@
 import "./index.css";
-
 import type React from "react";
-import { Icon, type IconName } from "../Icon";
 import { GyampoComponent, type GyampoComponentProps } from "../Component";
-
+import { Icon, type IconName } from "../Icon";
 
 export const ButtonVariants = {
     StandardButton: "StandardButton",
@@ -48,7 +46,6 @@ export const Button = (props: GyampoComponentProps<ButtonProps>) => {
         {...builtinProps}
         as="button"
         classNameList={[...classNameList, "Button", variant ? `Button--${variant}` : ""]}>
-
         {children || <>
             {hasIcon && icon && <Icon name={icon} classNameList={["Button__icon"]} />}
 
@@ -59,6 +56,5 @@ export const Button = (props: GyampoComponentProps<ButtonProps>) => {
                     {text}
                 </span>}
         </>}
-
     </GyampoComponent >
 }
