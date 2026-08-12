@@ -1,4 +1,4 @@
-import { useContext, useLayoutEffect, useRef, type AnimationEventHandler, type RefObject } from "react";
+import { useContext, useLayoutEffect, useRef, type RefObject } from "react";
 import type { NavigationItem } from "../../lib/navigation";
 import { navigationContext } from "../../lib/navigation/Provider";
 import { GyampoComponent, type GyampoComponentProps } from "../Component";
