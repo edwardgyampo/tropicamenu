@@ -1,6 +1,6 @@
 import "./index.css";
 import { useEffect, useRef } from "react";
-import { GyampoComponent, type GyampoComponentProps } from "../Component";
+import { GyampoComponent, type GyampoBaseComponentProps } from "../Component";
 
 const SVG_DIR = './svg';
 
@@ -16,7 +16,7 @@ const icons = import.meta.glob("./svg/*.svg", {
     import: "default"
 });
 
-export const Icon = (props: GyampoComponentProps<{ name: IconName }>) => {
+export const Icon = (props: GyampoBaseComponentProps<{ name: IconName }>) => {
     const { name, ...remainderProps } = props;
     const ref = useRef<HTMLSpanElement>(null);
 

@@ -1,6 +1,6 @@
 import "./index.css";
 import type React from "react";
-import { GyampoComponent, type GyampoComponentProps } from "../Component";
+import { GyampoComponent, type GyampoBaseComponentProps } from "../Component";
 import { Icon, type IconName } from "../Icon";
 
 export const ButtonVariants = {
@@ -22,7 +22,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     variant?: ButtonVariant
 };
 
-export const Button = (props: GyampoComponentProps<ButtonProps>) => {
+export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
     const {
         classNameList = [],
         variant = "StandardButton",

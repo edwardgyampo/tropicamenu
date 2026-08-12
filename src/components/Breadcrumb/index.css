@@ -24,11 +24,12 @@
 
 .Breadcrumb__list {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: .1em;
     width: 100%;
     overflow-x: scroll;
-    direction: rtl;
+    flex-direction: row-reverse;
     padding-top: .2em;;
     padding-bottom: .4em;
     padding-left: 20%;
@@ -42,5 +43,5 @@
 .Breadcrumb__button,
 .Breadcrumb__separator {
     display: inline-flex;
-    font-size: .6em;
+    font-size: .8em;
 }

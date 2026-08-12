@@ -1,22 +1,23 @@
 .Screen {
     position: absolute;
     top: 0;
-    left: 0;
-    width: max-content; /* Prevent .Screen from forcing on word wrapping. */
+    min-width: max-content;
     display: flex;
     flex-direction: column;
-    background-color: hsl(from var(--background-color) h s calc(l + 2));
+    gap: .5em;
     border-width: .2rem;
-    border-style: solid;
-    border-radius: .5rem;
-    border-color: hsl(from var(--background-color) h s calc(l + 10));
-    overflow: hidden; 
-    visibility: hidden; /* .Screen--current should show if and only if direction is set to indicate animation is active. */
+    overflow: hidden;
 }
 
-.Navigation--Forward .Screen,
-.Navigation--Backward .Screen {
-    animation-duration: 400ms;
+.Screen__navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: .4em .4em 0 .4em;
+    font-size: .7em;
+}
+
+.Screen {
+    animation-duration: var(--animation-duration);
     animation-timing-function: ease-out;
     animation-iteration-count: 1;
     animation-direction: normal;
@@ -24,61 +25,34 @@
     animation-play-state: running;
 }
 
-.Screen--current {
-    visibility: visible;
-    min-width: max-content;
+.Screen:not(.Navigation--animated .Screen) {
+    animation-name: none;
 }
 
-.Navigation--Forward .Screen--current {
-    animation-name: SlideInFromRight;
-}
-
-.Navigation--Backward .Screen--current {
-    animation-name: SlideInFromLeft;
-}
-
-.Navigation--Forward .Screen--back {
-    visibility: visible;
-    animation-name: SlideOutToLeft;
-}
-
-.Navigation--Backward .Screen--next {
-    visibility: visible;
+.SlideOutToRight {
     animation-name: SlideOutToRight;
 }
 
-.Navigation--Backward .Screen--back,
-.Navigation--Forward .Screen--next {
-    visibility: hidden;
+.SlideInFromRight {
+    animation-name: SlideInFromRight;
 }
 
-@keyframes SlideInFromRight {
-    0% {
-        translate: calc(1 * var(--width));
-    }
-    
-    100% {
-        translate: 0;
-    }
+.SlideOutToLeft {
+    animation-name: SlideOutToLeft;
 }
+
+.SlideInFromLeft {
+    animation-name: SlideInFromLeft;
+}
+
 
 @keyframes SlideInFromLeft {
     0% {
-        translate: calc(-1 * var(--width));
+        translate: calc(-1 * max(var(--CurrentScreen-width, 0px), var(--BackScreen-width, 0px)));
     }
-    
-    100% {
-        translate: 0;
-    }
-}
 
-@keyframes SlideOutToLeft {
-    0% {
-        translate: 0;
-    }
-    
     100% {
-        translate: calc(-1 * var(--width));
+        translate: 0;
     }
 }
 
@@ -86,8 +60,28 @@
     0% {
         translate: 0;
     }
-    
+
     100% {
-        translate: calc(1 * var(--width));
+        translate: calc(1 * max(var(--CurrentScreen-width, 0px), var(--NextScreen-width, 0px)));
+    }
+}
+
+@keyframes SlideInFromRight {
+    0% {
+        translate: calc(1 * max(var(--CurrentScreen-width, 0px), var(--BackScreen-width, 0px)));
+    }
+
+    100% {
+        translate: 0px;
+    }
+}
+
+@keyframes SlideOutToLeft {
+    0% {
+        translate: 0px;
+    }
+
+    100% {
+        translate: calc(-1 * max(var(--CurrentScreen-width, 0px), var(--BackScreen-width, 0px)));
     }
 }

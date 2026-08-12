@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from "react"
-import { GyampoComponent, type GyampoComponentProps } from "../Component"
+import { GyampoComponent, type GyampoBaseComponentProps } from "../Component"
 
-export const Paper = (props: GyampoComponentProps<PropsWithChildren>) => {
+export const Paper = (props: GyampoBaseComponentProps<PropsWithChildren>) => {
     const { classNameList = [], children } = props;
 
     return <GyampoComponent

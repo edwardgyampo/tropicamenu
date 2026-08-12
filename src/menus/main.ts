@@ -1,217 +1,234 @@
 export const MAIN_MENU = {
-  name: 'Education',
+  name: 'App',
   list: [
     {
-      name: 'Mathematics',
+      name: 'Workspace',
       list: [
         {
-          name: 'Foundations',
+          name: 'Overview',
           list: [
-            { name: 'Logic' },
-            { name: 'Set Theory' },
-            { name: 'Proofs' },
-            { name: 'Number Theory' },
+            { name: 'Home' },
+            { name: 'Recent Activity' },
+            { name: 'Pinned Items' },
+            { name: 'Things You Saved' },
           ]
         },
         {
-          name: 'Core Mathematics',
+          name: 'Projects',
           list: [
-            { name: 'Algebra' },
-            { name: 'Calculus' },
-            { name: 'Geometry' },
-            { name: 'Linear Algebra' },
-            { name: 'Differential Equations' },
+            { name: 'All Projects' },
+            { name: 'Shared With Me' },
+            { name: 'Recently Viewed' },
+            { name: 'Archived Projects' },
+            { name: 'Project Templates' },
           ]
         },
         {
-          name: 'Advanced Mathematics',
+          name: 'Team',
           list: [
-            { name: 'Probability' },
-            { name: 'Statistics' },
-            { name: 'Real Analysis' },
-            { name: 'Abstract Algebra' },
-            { name: 'Topology' },
+            { name: 'Members' },
+            { name: 'Roles & Permissions' },
+            { name: 'Invitations' },
+            { name: 'Groups' },
+          ]
+        },
+        {
+          name: 'Files & Storage',
+          list: [
+            { name: 'My Files' },
+            { name: 'Shared Files' },
+            { name: 'Recent Uploads' },
+            { name: 'Storage Overview' },
+            { name: 'Trash' },
           ]
         },
       ]
     },
-
     {
-      name: 'Natural Sciences',
+      name: 'Account',
       list: [
         {
-          name: 'Physics',
+          name: 'Profile',
           list: [
-            { name: 'Mechanics' },
-            { name: 'Thermodynamics' },
-            { name: 'Electromagnetism' },
-            { name: 'Quantum Mechanics' },
-            { name: 'Relativity' },
+            { name: 'Personal Info' },
+            { name: 'Profile Photo' },
+            { name: 'Preferences' },
+            { name: 'Connected Accounts' },
           ]
         },
         {
-          name: 'Chemistry',
+          name: 'Security',
           list: [
-            { name: 'Atomic Structure' },
-            { name: 'Chemical Bonding' },
-            { name: 'Thermochemistry' },
-            { name: 'Organic Chemistry' },
-            { name: 'Biochemistry' },
+            { name: 'Password' },
+            { name: 'Two-Step Verification' },
+            { name: 'Active Sessions' },
+            { name: 'Login History' },
+            { name: 'Recovery Options' },
           ]
         },
         {
-          name: 'Biology',
+          name: 'Plan & Billing',
           list: [
-            { name: 'Cell Biology' },
-            { name: 'Genetics' },
-            { name: 'Evolution' },
-            { name: 'Neuroscience' },
-            { name: 'Ecology' },
+            { name: 'Current Plan' },
+            { name: 'Payment Methods' },
+            { name: 'Invoices' },
+            { name: 'Billing History' },
           ]
         },
         {
-          name: 'Earth Sciences',
+          name: 'Account Data',
           list: [
-            { name: 'Geology' },
-            { name: 'Meteorology' },
-            { name: 'Oceanography' },
-            { name: 'Climate Science' },
+            { name: 'Download Data' },
+            { name: 'Import' },
+            { name: 'Export' },
           ]
         },
       ]
     },
-
     {
-      name: 'Computer Science',
+      name: 'Settings',
       list: [
         {
-          name: 'Fundamentals',
+          name: 'General',
           list: [
-            { name: 'Algorithms' },
-            { name: 'Data Structures' },
-            { name: 'Computational Complexity' },
-            { name: 'Discrete Mathematics' },
+            { name: 'Language' },
+            { name: 'Region & Time' },
+            { name: 'Appearance' },
+            { name: 'Default Preferences' },
           ]
         },
         {
-          name: 'Computer Systems',
+          name: 'Notifications',
           list: [
-            { name: 'Computer Architecture' },
-            { name: 'Operating Systems' },
-            { name: 'Distributed Systems' },
-            { name: 'Computer Networks' },
-            { name: 'Databases' },
+            { name: 'Email Alerts' },
+            { name: 'Push Notifications' },
+            { name: 'Mentions' },
+            { name: 'Product Updates' },
+            { name: 'Quiet Hours' },
           ]
         },
         {
-          name: 'Artificial Intelligence',
+          name: 'Privacy',
           list: [
-            { name: 'Machine Learning' },
-            { name: 'Neural Networks' },
-            { name: 'Natural Language Processing' },
-            { name: 'Computer Vision' },
+            { name: 'Visibility' },
+            { name: 'Data Sharing' },
+            { name: 'Activity Status' },
+            { name: 'Personalization' },
+          ]
+        },
+        {
+          name: 'Appearance',
+          list: [
+            { name: 'Theme' },
+            { name: 'Colors' },
+            { name: 'Interface Density' },
+            { name: 'Sidebar Behavior' },
+            { name: 'Accessibility' },
           ]
         },
       ]
     },
-
     {
-      name: 'Human Sciences',
+      name: 'Tools',
       list: [
         {
-          name: 'Psychology',
+          name: 'Integrations',
           list: [
-            { name: 'Cognitive Psychology' },
-            { name: 'Developmental Psychology' },
-            { name: 'Learning' },
-            { name: 'Memory' },
-            { name: 'Decision Making' },
+            { name: 'Connected Apps' },
+            { name: 'API Access' },
+            { name: 'Webhooks' },
+            { name: 'Import Sources' },
           ]
         },
         {
-          name: 'Linguistics',
+          name: 'Automation',
           list: [
-            { name: 'Phonetics' },
-            { name: 'Syntax' },
-            { name: 'Semantics' },
-            { name: 'Pragmatics' },
-            { name: 'Language Acquisition' },
+            { name: 'Workflows' },
+            { name: 'Scheduled Tasks' },
+            { name: 'Rules' },
+            { name: 'Automated Actions' },
+            { name: 'Run History' },
           ]
         },
         {
-          name: 'Education Science',
+          name: 'Developer',
           list: [
-            { name: 'Learning Theory' },
-            { name: 'Pedagogy' },
-            { name: 'Assessment' },
-            { name: 'Curriculum Design' },
+            { name: 'API Keys' },
+            { name: 'Webhooks' },
+            { name: 'Logs' },
+            { name: 'Environments' },
+          ]
+        },
+        {
+          name: 'Analytics',
+          list: [
+            { name: 'Overview' },
+            { name: 'Usage' },
+            { name: 'Performance' },
+            { name: 'Export Reports' },
           ]
         },
       ]
     },
-
     {
-      name: 'Philosophy',
+      name: 'Support',
       list: [
         {
-          name: 'Reasoning',
+          name: 'Help Center',
           list: [
-            { name: 'Critical Thinking' },
-            { name: 'Formal Logic' },
-            { name: 'Argumentation' },
-            { name: 'Logical Fallacies' },
+            { name: 'Getting Started' },
+            { name: 'Guides & Tutorials' },
+            { name: 'Frequently Asked Questions' },
+            { name: 'Troubleshooting' },
           ]
         },
         {
-          name: 'Knowledge',
+          name: 'Contact',
           list: [
-            { name: 'Epistemology' },
-            { name: 'Scientific Method' },
-            { name: 'Rationality' },
-            { name: 'Philosophy of Science' },
+            { name: 'Support' },
+            { name: 'Send Feedback' },
+            { name: 'Report an Issue' },
           ]
         },
         {
-          name: 'Ethics',
+          name: 'About',
           list: [
-            { name: 'Moral Philosophy' },
-            { name: 'Applied Ethics' },
-            { name: 'Professional Ethics' },
-            { name: 'Bioethics' },
+            { name: 'About the App' },
+            { name: 'Release Notes' },
+            { name: 'System Status' },
+            { name: 'Terms & Policies' },
+            { name: 'Version Information' },
           ]
         },
       ]
     },
-
     {
-      name: 'Academic Skills',
+      name: 'Quick Access',
       list: [
         {
-          name: 'Research',
+          name: 'Create',
           list: [
-            { name: 'Research Methods' },
-            { name: 'Literature Review' },
-            { name: 'Academic Writing' },
-            { name: 'Citation Methods' },
-            { name: 'Scientific Reading' },
+            { name: 'New Project' },
+            { name: 'New Document' },
+            { name: 'New Team Member' },
+            { name: 'New Automation' },
           ]
         },
         {
-          name: 'Reasoning',
+          name: 'Recent',
           list: [
-            { name: 'Critical Thinking' },
-            { name: 'Problem Solving' },
-            { name: 'Systems Thinking' },
-            { name: 'Quantitative Reasoning' },
+            { name: 'Recently Opened' },
+            { name: 'Recently Edited' },
+            { name: 'Recently Shared' },
           ]
         },
         {
-          name: 'Communication',
+          name: 'Favorites',
           list: [
-            { name: 'Technical Writing' },
-            { name: 'Scientific Communication' },
-            { name: 'Presentation Skills' },
-            { name: 'Data Visualization' },
+            { name: 'Starred Projects' },
+            { name: 'Saved Views' },
+            { name: 'Important Files' },
+            { name: 'Pinned Shortcuts' },
           ]
         },
       ]

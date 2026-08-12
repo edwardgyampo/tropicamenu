@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react"
-import { GyampoComponent, type GyampoComponentProps } from "../Component"
+import { GyampoComponent, type GyampoBaseComponentProps } from "../Component"
 
 type ScrollableProps = PropsWithChildren<{
     direction: "rtl" | "ltr" | "ttb" | "btt"
@@ -9,7 +9,7 @@ export const Scrollable = ({
     children,
     direction,
     ...remainderProps
-}: GyampoComponentProps<ScrollableProps>) => {
+}: GyampoBaseComponentProps<ScrollableProps>) => {
 
     return <GyampoComponent
         {...remainderProps}

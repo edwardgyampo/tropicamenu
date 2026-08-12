@@ -3,19 +3,19 @@ import type React from "react"
 import { compoundClassName } from "../../lib/compoundClassName";
 
 
-export type GyampoComponentProps<T = {}> = T & {
-    classNameList?: string[]
+export type GyampoBaseComponentProps<T = {}> = T & {
+    classNameList?: Parameters<typeof compoundClassName>[0]
 }
 
-export type GenericComponentProps<T extends React.ElementType> =
-    GyampoComponentProps
+export type GyampoComponentProps<T extends React.ElementType = "div", U = {}> =
+    GyampoBaseComponentProps<U>
     & { as?: T }
     & Omit<
         React.ComponentPropsWithRef<T>,
-        keyof GyampoComponentProps
+        keyof GyampoBaseComponentProps<U>
     >;
 
-export const GyampoComponent = <T extends React.ElementType = "div">(props: GenericComponentProps<T>) => {
+export const GyampoComponent = <T extends React.ElementType = "div">(props: GyampoComponentProps<T>) => {
     const ElementType = props.as || "div";
 
     const { classNameList, children, className, ...builtinProps } = props;

@@ -1,144 +1,61 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
-import type { ListItem } from "../../lib/list";
-import { useNavigation } from "../../lib/navigation/useNavigation";
-import { Breadcrumb, type BreadcrumbItem } from "../Breadcrumb";
-import { Button, ButtonVariants } from "../Button";
+import { useContext, useRef } from "react";
+import { navigationContext } from "../../lib/navigation/Provider";
 import { GyampoComponent } from "../Component";
-import { Screen } from "../Screen/Screen";
-import { MenuContent } from "./Content";
+import { Screen } from "../Screen";
+import { Stack } from "../Stack";
+import { FutureJourney } from "./FutureJourney";
 import "./index.css";
-import { Icon } from "../Icon";
-
-const renderBreadcrumbItem =
-    (nav: ReturnType<typeof useNavigation>) =>
-        (item: BreadcrumbItem) =>
-            <Button
-                text={item}
-                onClick={_ => nav.select(item)} />;
+import { PastJourney } from "./PastJourney";
 
 
 export type MenuProps = {
-    root: ListItem,
-    debug?: boolean,
-    nerd?: boolean
+    debug?: boolean
 };
 
 export const Menu = (props: MenuProps) => {
-    const { root, debug = false, nerd = false } = props;
+    const { debug = false } = props;
     const ref = useRef<HTMLDivElement>(null);
-    const currentScreenRef = useRef<HTMLDivElement>(null);
-    const nav = useNavigation({ root });
+    const { navigation } = useContext(navigationContext);
 
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const str = nav.classNames.direction;
-        if (el.classList.contains(str)) return;
-        el.classList.add(str);
-    }, [
-        ref.current,
-        nav.classNames.direction,
-        nav.state.present
-    ]);
+    const classList = [
+        "Menu",
+        navigation.direction ? "Navigation--animated" : "",
+        debug ? "Menu--debug" : "",
+    ];
 
-    useLayoutEffect(() => {
-        const currentScreen = currentScreenRef.current;
-        if (!ref.current || !currentScreen) return;
-        
-        const updateSize = () => {
-            if (!ref.current || !currentScreen) return;
-            const width = `${Math.ceil(currentScreen!.getBoundingClientRect().width)}px`;
-            const height = `${Math.ceil(currentScreen!.getBoundingClientRect().height)}px`;
-            console.log(width);
-            ref.current.style?.setProperty("--width", width);
-            ref.current.style?.setProperty("--height", height);
-        };
-
-        updateSize();
-
-        const observer = new ResizeObserver(updateSize);
-        observer.observe(currentScreen);
-
-        return () => observer.disconnect();
-    }, [
-        ref.current,
-        currentScreenRef.current,
-        nav.state.present
-    ]);
-
-    return <GyampoComponent ref={ref} role="menu"
-        classNameList={[
-            debug ? "Menu--debug" : "",
-            nerd ? "Menu--nerd" : "",
-            "Menu",
-            nav.classNames.direction
-        ]}>
-
+    return <GyampoComponent ref={ref} role="menu" classNameList={classList}>
         <div className="Menu__wrapper">
-            <div className="Menu__actionArea">
-                <Button
-                    disabled={nav.state.present.name === root.name}
-                    onClick={_ => nav.select(root.name)}
-                    icon="Home"
-                    text="Go to Start"
-                    variant={ButtonVariants.TextButton}
-                    classNameList={['Menu__homeButton']} />
-            </div>
+            <Stack direction="column" classNameList={["Menu__navigationPaths"]}>
+                <PastJourney />
 
-
-            <div className="Menu__sectionForNerds">
-                <div className="Menu__breadcrumbs">
-                    <Breadcrumb
-                        name={"past"}
-                        items={nav.state.past.map(x => x.name)}
-                        renderItem={renderBreadcrumbItem(nav)} />
-
-                    <Breadcrumb
-                        name={"future"}
-                        items={nav.state.future.map(x => x.name)}
-                        renderItem={renderBreadcrumbItem(nav)} />
-                </div>
-            </div>
-
-            <div className="Menu__navigation">
-                <Button
-                    variant={ButtonVariants.IconButton}
-                    onClick={() => nav.goBack()}
-                    disabled={!nav.hasPastItems()}>
-                    <Icon name="NavigateBefore" />
-                </Button>
-
-                <Button
-                    variant={ButtonVariants.IconButton}
-                    onClick={() => nav.goFoward()}
-                    disabled={!nav.hasFutureItems()}>
-                    <Icon name="NavigateNext" />
-                </Button>
-            </div>
-
+                <FutureJourney />
+            </Stack>
 
             <div className="Menu__screens">
-                {nav.backItem && <Screen
-                    classNameList={["Screen--back", "Menu__screen"]}
-                    title={nav.backItem.name}
-                    nav={nav}
-                    container={ref}
-                    content={<MenuContent nav={nav} item={nav.backItem} />} />}
 
-                {nav.currentItem && <Screen
-                    ref={currentScreenRef}
-                    classNameList={["Screen--current", "Menu__screen"]}
-                    title={nav.currentItem.name}
-                    nav={nav}
-                    container={ref}
-                    content={<MenuContent nav={nav} item={nav.currentItem} />} />}
+                {navigation.isForward && navigation.backItem && <Screen
+                    key={navigation.backItem?.name}
+                    id="BackScreen"
+                    item={navigation.backItem}
+                    containerRef={ref}
+                    animation={"SlideOutToLeft"} />}
 
-                {nav.nextItem && <Screen
-                    classNameList={["Screen--next", "Menu__screen"]}
-                    title={nav.nextItem.name}
-                    nav={nav}
-                    container={ref}
-                    content={<MenuContent nav={nav} item={nav.nextItem} />} />}
+                {navigation.currentItem && <Screen
+                    key={navigation.currentItem.name}
+                    id="CurrentScreen"
+                    item={navigation.currentItem}
+                    containerRef={ref}
+                    animation={navigation.isForward
+                        ? "SlideInFromRight"
+                        : "SlideInFromLeft"} />}
+
+                {navigation.isBackward && navigation.nextItem && <Screen
+                    key={navigation.nextItem?.name}
+                    id="NextScreen"
+                    item={navigation.nextItem}
+                    containerRef={ref}
+                    animation={"SlideOutToRight"} />}
+
             </div>
         </div>
     </GyampoComponent>

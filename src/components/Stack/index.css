@@ -1,0 +1,19 @@
+.Stack {
+    display: flex;
+}
+
+.Stack--row {
+    flex-direction: row;
+}
+
+.Stack--row-reverse {
+    flex-direction: row-reverse;
+}
+
+.Stack--column {
+    flex-direction: column;
+}
+
+.Stack--column-reverse {
+    flex-direction: column-reverse;
+}

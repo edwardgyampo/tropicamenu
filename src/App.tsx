@@ -1,11 +1,13 @@
 import { Menu } from './components/Menu';
-import { MAIN_MENU } from './menus/main';
+import { NavigationProvider } from './lib/navigation/Provider';
 
 function App() {
 
   return (
     <>
-        <Menu root={MAIN_MENU} />
+      <NavigationProvider>
+        <Menu />
+      </NavigationProvider>
     </>
   )
 }

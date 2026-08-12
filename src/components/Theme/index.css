@@ -1,3 +1,5 @@
+@import "./tokens/color.css";
+
 .Theme {
   --font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
 
@@ -40,4 +42,4 @@
     --background-color-hsl: var(--background-color-h) var(--background-color-s) var(--background-color-l);
     --background-color: hsl(var(--background-color-hsl));
   }
-} 
+}

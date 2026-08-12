@@ -1,0 +1,12 @@
+.Theme {
+    --color-hsl-xl: 0deg 0% 98%;
+    --color-hsl-lt: 0deg 0% 74%;
+    --color-hsl-md: 0deg 0% 50%;
+    --color-hsl-dk: 0deg 0% 26%;
+    --color-hsl-xd: 0deg 0% 2%;
+    --color-xl: hsl(var(--color-hsl-xl));
+    --color-lt: hsl(var(--color-hsl-lt));
+    --color-md: hsl(var(--color-hsl-md));
+    --color-dk: hsl(var(--color-hsl-dk));
+    --color-xd: hsl(var(--color-hsl-xd));
+}

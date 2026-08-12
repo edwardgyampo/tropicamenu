@@ -1,6 +1,10 @@
 .Menu {
-    background-color: hsl(from var(--background-color) h s calc(l + 9));
+    --animation-duration: 300ms;
+    background-color: hsl(from var(--background-color) h s calc(l + 0));
     border-radius: .5em;
+}
+
+.Menu:not(:where(.Menu--debug)) {
     overflow: hidden;
 }
 
@@ -10,7 +14,7 @@
 }
 
 .Menu--debug .Screen--back {
-    border-color: hsl(103, 100%, 60%);
+    border-color: hsl(0 100% 60%);
 }
 
 .Menu--debug .Screen--current {
@@ -18,35 +22,37 @@
 }
 
 .Menu--debug .Screen--next {
-    border-color: hsl(0 100% 60%);
+    border-color: hsl(103, 100%, 60%);
 }
 
-.Menu__sectionForNerds {
-    padding: .1rem;
+.Menu__navigationPaths {
+    gap: .4em;
+    padding: .4em;
 }
 
-.Menu__sectionForNerds:not(.Menu--nerd .Menu__sectionForNerds) {
+.Menu:not(.Menu--debug) :where(.Menu__navigationPaths) {
     display: none;
 }
 
+.Menu__screens,
 .Menu__wrapper {
-    width: var(--width);
-    display: inline-flex;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: ease-out;
+}
+
+.Menu__wrapper {
+    display: flex;
     flex-direction: column;
     row-gap: .4em;
+    width: var(--CurrentScreen-width);
     transition-property: width;
-    transition-duration: 350ms;
-    transition-timing-function: ease-out;
 }
 
 .Menu__screens {
     position: relative;
     display: flex;
-    height: var(--height, 0px);
+    height: var(--CurrentScreen-height, 0px);
     transition-property: height;
-    transition-duration: 300ms;
-    transition-timing-function: ease-out;
-    overflow: hidden;
 }
 
 .MenuBody {
@@ -54,24 +60,15 @@
 }
 
 .MenuHead {
-    min-width: 10em; /* Implicit min-width for .Menu since .Menu size is derived from .Screen--current size, and .Screen-current contains .MenuHead .*/
     padding: .5em 1em;
-}
-
-.MenuHead {
-    background-color: hsl(from var(--background-color) h s calc(l + 5));
-    border-bottom-width: .1rem;
-    border-bottom-style: solid;
-    border-color: hsl(from var(--background-color) h s calc(l + 10));
 }
 
 .Menu__builtinList {
     list-style: none;
     display: flex;
     flex-direction: column;
-    row-gap: .4em;
-    border-radius: .5em;
-    background-color: hsl(from var(--background-color) h s calc(l + 2));
+    border-radius: .8em;
+    padding: 0 .4em .4em .4em;
 }
 
 .Menu__item {
@@ -82,19 +79,20 @@
     width: 100%;
 }
 
-.MenuTitle {
-    text-transform: capitalize;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: .05em;
+.Menu__itemButton .Icon {
+    font-size: .6em;
 }
 
-.Menu__hr {
-    outline: none;
-    background-color: transparent;
-    border: none;
-    border-top: .1em solid;
-    border-color: hsl(from var(--background-color) h s calc(l + 6));
+.Menu__title {
+    font-size: .8em;
+    padding: .4em 0;
+    text-transform: capitalize;
+    text-align: center;
+    color: hsl(from var(--color) h s calc(l - 50));
+    letter-spacing: .05em;
+    border-width: .1rem 0;
+    border-style: solid;
+    border-color: hsl(from var(--background-color) h s calc(l + 4));
 }
 
 .Menu__breadcrumbs {
@@ -103,15 +101,8 @@
     row-gap: .4em;
 }
 
-.Menu__navigation {
-    display: flex;
-    justify-content: space-between;
-    padding-left: .5rem;
-    padding-right: .5rem;
-}
-
-.Menu__actionArea {
-    padding-top: .5rem;
-    padding-left: .5rem;
-    align-self: flex-start;
+.BackButton:not(:disabled),
+.NextButton:not(:disabled) {
+    color: hsl(from var(--color) h s calc(l - 35));
+    font-weight: bold;
 }

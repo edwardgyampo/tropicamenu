@@ -1,50 +1,66 @@
-import { Button } from "../Button";
+import type { PropsWithChildren } from "react";
+import type { ListItem } from "../../lib/list";
+import { GyampoComponent, type GyampoBaseComponentProps } from "../Component";
+import { Icon } from "../Icon";
 import "./index.css";
 
-export type BreadcrumbItem = string;
 
-export interface BreadcrumbProps {
+export interface BreadcrumbProps extends GyampoBaseComponentProps {
     name?: string,
-    items: BreadcrumbItem[],
-    renderItem: (item: BreadcrumbItem) => React.JSX.Element
+    items: ListItem[],
+    renderItem: (item: ListItem) => React.JSX.Element
 };
 
-const parser = new DOMParser();
+export const Breadcrumb = (props: BreadcrumbProps) => {
+    const {
+        classNameList = [],
+        name,
+        items,
+        renderItem
+    } = props;
 
-export const Breadcrumb = ({ name, items, renderItem }: BreadcrumbProps) => {
 
-    return <div className="Breadcrumb">
-        <span className="Breadcrumb__name">{name}</span>
+    const seperator = <Icon name="NavigateNext" />;
+
+    const Item = ({ children }: PropsWithChildren) =>
+        <GyampoComponent
+            as="li"
+            classNameList={[
+                "Breadcrumb__item",
+                "Breadcrumb__button"
+            ]}>
+            {children}
+        </ GyampoComponent>
+
+    const BreadcrumbItems = () => items.map((item, index) => {
+        return index > 0
+            ? [
+                <Item key={index + "s"}>
+                    {seperator}
+                </Item>,
+                <Item key={"i" + index}>
+                    {renderItem(item)}
+                </Item>
+            ]
+            : [<Item key={index}>
+                {renderItem(item)}
+            </Item>]
+    });
+
+    return <GyampoComponent
+        classNameList={[
+            ...classNameList,
+            "Breadcrumb"
+        ]}>
+
+        <span className="Breadcrumb__name">
+            {name}
+        </span>
 
         <ul className="Breadcrumb__list">
-            {(() => {
-                const separatorDoc =
-                    parser.parseFromString("&rsaquo;", "text/html");
-                const separator = separatorDoc.body.textContent;
-                const itemsSeparated = items?.map((item, i) =>
-                    i > 0 ? [separator, item] : [item]);
 
-                const seperatorElement =
-                    (item: BreadcrumbItem, index: number) =>
-                        <li
-                            key={`Breadcrumb_${item}_${index}`}
-                            className="Breadcrumb__item Breadcrumb__separator">
-                            <Button text={separator} />
-                        </li>;
+            <BreadcrumbItems />
 
-                const button =
-                    (item: BreadcrumbItem, index: number) =>
-                        <li
-                            key={`Breadcrumb_${item}_${index}`}
-                            className="Breadcrumb__item Breadcrumb__button">
-                            {renderItem ? renderItem(item) : <Button text={item} />}
-                        </li>;
-
-                return itemsSeparated?.flat()?.reverse().map((item, index) =>
-                    item === separator
-                        ? seperatorElement(item, index)
-                        : button(item, index))
-            })()}
         </ul>
-    </div >
+    </GyampoComponent >
 }

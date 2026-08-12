@@ -1,24 +1,22 @@
 .Button {
-    font-size: 1.2em;
+    user-select: none;
+    font-size: inherit;
     display: inline-flex;
-    column-gap: 1em;
+    column-gap: .4em;
     align-items: center;
     justify-content: space-between;
+    padding: .6em;
     cursor: pointer;
     outline: none;
     border: none;
     --border-width: .1rem;
-    border-width: var(--border-width);
-    border-style: solid;
-    border-color: hsl(from var(--background-color) h s calc(l + 10));
     border-radius: .5em;
-    background-color: hsl(from var(--background-color) h s calc(l + 5));
-    transition: background-color 250ms, color 250ms ease-out;
-    box-shadow: 0 0 2px hsl(0 0 0 / 50%);
+    background-color: transparent;
+    transition: background-color 200ms, color 200ms ease-out;
 }
 
 .Button:hover {
-    background-color: hsl(from var(--background-color) h s calc(l + 8));
+    background-color: hsl(from var(--background-color) h s calc(l + 12) / .5);
     color: hsl(from var(--color) h s calc(l - 16));
 }
 
@@ -34,20 +32,14 @@
 }
 
 .Button--TextButton {
-    padding: .5em .8em;
     justify-content: center;
-}
-
-.Button--StandardButton {
-    padding: .5em .8em .5em .3em;
 }
 
 .Button--StandardButtonReversed {
     flex-direction: row-reverse;
-    padding: .5em .3em .5em .8em;
 }
 
 .Button--IconButton {
-    padding: .5em;
+    padding: .6em;
     border-radius: .5rem;
 }
