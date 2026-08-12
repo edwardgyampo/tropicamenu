@@ -1,6 +1,6 @@
 .Menu {
     --animation-duration: 300ms;
-    background-color: hsl(from var(--background-color) h s calc(l + 0));
+    background-color: hsl(from var(--background-color) h s calc(l + 2));
     border-radius: .5em;
 }
 
@@ -59,10 +59,6 @@
     padding: .4em;
 }
 
-.MenuHead {
-    padding: .5em 1em;
-}
-
 .Menu__builtinList {
     list-style: none;
     display: flex;
@@ -77,6 +73,7 @@
 
 .Menu__itemButton {
     width: 100%;
+    color: hsl(from var(--color) h s calc(l - 8));
 }
 
 .Menu__itemButton .Icon {
@@ -88,11 +85,11 @@
     padding: .4em 0;
     text-transform: capitalize;
     text-align: center;
-    color: hsl(from var(--color) h s calc(l - 50));
+    color: hsl(from var(--color) h s calc(l - 40));
     letter-spacing: .05em;
     border-width: .1rem 0;
     border-style: solid;
-    border-color: hsl(from var(--background-color) h s calc(l + 4));
+    border-color: hsl(from var(--background-color) h s calc(l + 8));
 }
 
 .Menu__breadcrumbs {
