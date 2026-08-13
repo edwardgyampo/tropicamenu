@@ -7,6 +7,7 @@ import { NextButton } from "../Menu/NextButton";
 import { MenuOptions } from "../Menu/Options";
 import { Stack } from "../Stack";
 import "./index.css";
+import { HomeButton } from "../Menu/HomeButton";
 
 export type ScreenComponentProps = GyampoComponentProps<"div", {
     item: NavigationItem,
@@ -66,6 +67,12 @@ export const Screen = (props: ScreenComponentProps) => {
             direction="column"
             classNameList={["Screen__navigation"]}
             style={{ gap: ".4em" }}>
+
+            <Stack
+                direction="row"
+                style={{ justifyContent: "center" }}>
+                <HomeButton />
+            </Stack>
 
             <div style={{ alignSelf: "flex-end" }}>
                 <NextButton item={item.nextItem} />
