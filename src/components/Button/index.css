@@ -2,7 +2,7 @@
     user-select: none;
     font-size: inherit;
     display: inline-flex;
-    column-gap: .4em;
+    column-gap: .9em;
     align-items: center;
     justify-content: space-between;
     padding: .6em;
@@ -13,6 +13,11 @@
     border-radius: .5em;
     background-color: transparent;
     transition: background-color 200ms, color 200ms ease-out;
+}
+
+.Button__icon {
+    display: inline-flex;
+    font-size: 1.5em;
 }
 
 .Button:hover {
@@ -27,8 +32,8 @@
 
 .Button:disabled {
     pointer-events: none;
-    background-color: hsl(from var(--background-color) h s calc(l + 4));
-    border-color: hsl(from var(--background-color) h s calc(l + 6));
+    background-color: hsl(from var(--background-color) h s calc(l + 2));
+    color: hsl(from var(--color) h s calc(l - 80));
 }
 
 .Button--TextButton {

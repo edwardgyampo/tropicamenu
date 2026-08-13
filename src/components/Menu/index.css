@@ -76,10 +76,6 @@
     color: hsl(from var(--color) h s calc(l - 8));
 }
 
-.Menu__itemButton .Icon {
-    font-size: .6em;
-}
-
 .Menu__title {
     font-size: .8em;
     padding: .4em 0;
@@ -98,8 +94,9 @@
     row-gap: .4em;
 }
 
-.BackButton:not(:disabled),
-.NextButton:not(:disabled) {
+.Menu__HomeButton,
+.Menu__BackButton:not(:disabled),
+.Menu__NextButton:not(:disabled) {
     color: hsl(from var(--color) h s calc(l - 35));
     font-weight: bold;
 }

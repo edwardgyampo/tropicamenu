@@ -1,43 +1,24 @@
-import "./index.css";
-import { useEffect, useRef } from "react";
+import { type JSX } from "react";
 import { GyampoComponent, type GyampoBaseComponentProps } from "../Component";
+import "./index.css";
 
-const SVG_DIR = './svg';
+type IconElementType = JSX.ElementType;
 
-export type IconName =
-    'Poolinpit'
-    | 'Send'
-    | 'Home'
-    | 'NavigateBefore'
-    | 'NavigateNext';
+export type GyampoIconComponentProps = GyampoBaseComponentProps<{
+    IconType: IconElementType
+}>;
 
-const icons = import.meta.glob("./svg/*.svg", {
-    query: "?raw",
-    import: "default"
-});
+export type GyampoIconComponent = typeof GyampoIcon;
 
-export const Icon = (props: GyampoBaseComponentProps<{ name: IconName }>) => {
-    const { name, ...remainderProps } = props;
-    const ref = useRef<HTMLSpanElement>(null);
-
-    useEffect(() => {
-        (async () => {
-            if (!ref.current) return;
-            const loader = icons[`${SVG_DIR}/${name}.svg`];
-            try {
-                if (!loader) throw Error();
-                const svg = await loader() as string;
-                ref.current.innerHTML = svg;
-            }
-            catch (e) {
-                console.error(`Icon "${name}" not found.`);
-            }
-        })();
-    }, [name]);
+export const GyampoIcon = (props: GyampoIconComponentProps) => {
+    const { IconType, ...remainderProps } = props;
 
     return <GyampoComponent
         {...remainderProps}
         as="span"
-        className="Icon"
-        ref={ref} />;
-} 
+        className="Icon">
+
+        <IconType />
+
+    </GyampoComponent>;
+}

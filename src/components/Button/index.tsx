@@ -1,7 +1,8 @@
-import "./index.css";
 import type React from "react";
+import type { ReactElement } from "react";
 import { GyampoComponent, type GyampoBaseComponentProps } from "../Component";
-import { Icon, type IconName } from "../Icon";
+import { type GyampoIconComponent } from "../Icon";
+import "./index.css";
 
 export const ButtonVariants = {
     StandardButton: "StandardButton",
@@ -18,7 +19,7 @@ export type ButtonVariant = ButtonVariants[keyof ButtonVariants];
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     text?: string;
-    icon?: IconName;
+    Icon?: ReactElement<GyampoIconComponent>;
     variant?: ButtonVariant
 };
 
@@ -28,7 +29,7 @@ export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
         variant = "StandardButton",
         children,
         text,
-        icon,
+        Icon,
         ...builtinProps
     } = props;
 
@@ -40,14 +41,19 @@ export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
     const hasIcon = (variant === "StandardButton"
         || variant === "StandardButtonReversed"
         || variant === "IconButton"
-    ) && icon;
+    ) && Icon;
 
     return <GyampoComponent
         {...builtinProps}
         as="button"
         classNameList={[...classNameList, "Button", variant ? `Button--${variant}` : ""]}>
         {children || <>
-            {hasIcon && icon && <Icon name={icon} classNameList={["Button__icon"]} />}
+            {hasIcon
+                && <GyampoComponent
+                    as="span"
+                    classNameList={["Button__icon"]} >
+                    {Icon}
+                </GyampoComponent>}
 
             {hasText
                 && <span

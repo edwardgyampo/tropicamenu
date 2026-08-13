@@ -1,9 +1,8 @@
 import type { PropsWithChildren } from "react";
 import type { ListItem } from "../../lib/list";
 import { GyampoComponent, type GyampoBaseComponentProps } from "../Component";
-import { Icon } from "../Icon";
 import "./index.css";
-
+import ArrowIcon from "@iconify-react/material-symbols/arrow-right";
 
 export interface BreadcrumbProps extends GyampoBaseComponentProps {
     name?: string,
@@ -19,9 +18,6 @@ export const Breadcrumb = (props: BreadcrumbProps) => {
         renderItem
     } = props;
 
-
-    const seperator = <Icon name="NavigateNext" />;
-
     const Item = ({ children }: PropsWithChildren) =>
         <GyampoComponent
             as="li"
@@ -36,7 +32,7 @@ export const Breadcrumb = (props: BreadcrumbProps) => {
         return index > 0
             ? [
                 <Item key={index + "s"}>
-                    {seperator}
+                    <ArrowIcon />
                 </Item>,
                 <Item key={"i" + index}>
                     {renderItem(item)}
