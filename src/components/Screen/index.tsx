@@ -3,11 +3,11 @@ import type { NavigationItem } from "../../lib/navigation";
 import { navigationContext } from "../../lib/navigation/Provider";
 import { GyampoComponent, type GyampoComponentProps } from "../Component";
 import { BackButton } from "../Menu/BackButton";
+import { HomeButton } from "../Menu/HomeButton";
 import { NextButton } from "../Menu/NextButton";
 import { MenuOptions } from "../Menu/Options";
 import { Stack } from "../Stack";
 import "./index.css";
-import { HomeButton } from "../Menu/HomeButton";
 
 export type ScreenComponentProps = GyampoComponentProps<"div", {
     item: NavigationItem,
@@ -25,13 +25,14 @@ export const Screen = (props: ScreenComponentProps) => {
     } = props;
 
     const ref = useRef<HTMLDivElement>(null);
-
     const { navigation } = useContext(navigationContext);
-
+    
     useLayoutEffect(() => {
-
         const updateSize = () => {
-            if (!ref.current || !props.containerRef.current) return
+            if (!ref.current || !props.containerRef.current) return;
+            
+            ref.current.inert = ref.current.id !== "CurrentScreen";
+
             const rect = ref.current!.getBoundingClientRect();
             const w = `${Math.ceil(rect.width)}px`;
             const h = `${Math.ceil(rect.height)}px`;

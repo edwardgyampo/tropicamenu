@@ -18,7 +18,7 @@ export type GyampoComponentProps<T extends React.ElementType = "div", U = {}> =
 export const GyampoComponent = <T extends React.ElementType = "div">(props: GyampoComponentProps<T>) => {
     const ElementType = props.as || "div";
 
-    const { classNameList, children, className, ...builtinProps } = props;
+    const { as, classNameList, children, className, ...builtinProps } = props;
 
     return <ElementType
         ref={props.ref}

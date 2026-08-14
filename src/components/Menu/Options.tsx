@@ -1,4 +1,4 @@
-import { useContext, type MouseEventHandler } from "react";
+import { useContext, useMemo, type MouseEventHandler } from "react";
 import type { ListItem } from "../../lib/list";
 import { navigationContext } from "../../lib/navigation/Provider";
 import { Button, ButtonVariants, type ButtonProps } from "../Button";
@@ -21,29 +21,47 @@ export const MenuOptions = (props: MenuOptionsProps) => {
         navigation.select({ name } as ListItem);
     };
 
-    const extraButtonProps = (item: ListItem): ButtonProps =>
-        item.list && item.list.length > 0
-            ? {
-                variant: ButtonVariants.StandardButton,
-                SecondaryIcon: <GyampoIcon icon={"mdi:navigate-next"} />,
-                onClick: onClickItem
-            }
-            : { variant: ButtonVariants.StandardButton };
+    const itemElements = useMemo(() => {
+        return items?.map((item) => {
+            const ariaExpanded = item.name === navigation.currentItem?.name;
+            
+            const extraButtonProps = (item: ListItem): ButtonProps =>
+                item.list && item.list.length > 0
+                    ? {
+                        variant: ButtonVariants.StandardButton,
+                        SecondaryIcon: <GyampoIcon icon={"mdi:navigate-next"} />,
+                        onClick: onClickItem,
+                        "aria-haspopup": "menu",
+                        "aria-expanded": ariaExpanded
+                    }
+                    : {
+                        variant: ButtonVariants.StandardButton
+                    };
 
-
-    return <ul className={"Menu__builtinList"}>
-        {items?.map(item => {
             return <li
                 key={item.name}
                 className="Menu__item">
                 <Button
                     {...extraButtonProps(item)}
+                    aria-controls={item.name}
+                    role="menuitem"
+
                     text={item.name}
                     {...item.icon ? { PrimaryIcon: <GyampoIcon icon={item.icon} /> } : {}}
                     classNameList={[
                         "Menu__itemButton"
                     ]} />
             </li>
-        })}
+        })
+    }, [
+        navigation.currentItem?.name
+    ]);
+
+    return <ul
+        className={"Menu__builtinList"}
+        role="menu">
+
+        {itemElements}
+
     </ul>;
 }

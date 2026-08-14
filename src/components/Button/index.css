@@ -1,4 +1,6 @@
 .Button {
+    --border-width: .1rem;
+
     user-select: none;
     font-size: inherit;
     display: inline-flex;
@@ -9,8 +11,10 @@
     cursor: pointer;
     outline: none;
     border: none;
-    --border-width: .1rem;
-    border-radius: .5em;
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: transparent;
+    border-radius: .8em;
     background-color: transparent;
     transition: background-color 200ms, color 200ms ease-out;
 }
@@ -31,12 +35,17 @@
 
 .Button:hover {
     background-color: hsl(from var(--background-color) h s calc(l + 12) / .5);
-    color: hsl(from var(--color) h s calc(l - 16));
+    color: hsl(from var(--color) h s calc(l - 20));
 }
 
 .Button:active {
-    background-color: hsl(from var(--background-color) h s calc(l + 3));
-    color: hsl(from var(--color) h s calc(l - 24));
+    background-color: hsl(from var(--background-color) h s calc(l + 6));
+    color: hsl(from var(--color) h s calc(l - 30));
+}
+
+.Button:focus-visible {
+    color: hsl(from var(--color) h s calc(l - 30));
+    border-color: hsl(from var(--color) h s calc(l - 30) / .5);
 }
 
 .Button:disabled {
