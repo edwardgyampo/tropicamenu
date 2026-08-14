@@ -8,26 +8,28 @@
     overflow: hidden;
 }
 
-.Menu--debug .Screen {
+.Menu--debug .Screen,
+.Menu--debug :where(.Menu__navigationPaths) {
     border-width: 1px;
     border-style: solid;
 }
 
-.Menu--debug .Screen--back {
+.Menu--debug :where(#BackScreen) {
     border-color: hsl(0 100% 60%);
 }
 
-.Menu--debug .Screen--current {
+.Menu--debug :where(#CurrentScreen) {
     border-color: hsl(227 100% 60%);
 }
 
-.Menu--debug .Screen--next {
+.Menu--debug :where(#NextScreen) {
     border-color: hsl(103, 100%, 60%);
 }
 
 .Menu__navigationPaths {
     gap: .4em;
     padding: .4em;
+    border-color: rgb(255, 255, 113);
 }
 
 .Menu:not(.Menu--debug) :where(.Menu__navigationPaths) {
