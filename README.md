@@ -4,10 +4,11 @@ I created tropicamenu to test my understanding when I first learnt React.js.
 I've rewritten it to make it a bit better. Memories :)
 
 Highlights:
-- Simple tree-like options data.
+- JSON Menu Options.
+- Tree-like Navigation.
 - Unlimited menu depth.
-- Size transitions.
-- "debug" prop toggles past/future breadcrumbs + debug styles.
+- Size & screen transitions.
+- Debug mode via Menu prop.
   
 [Preview](https://tropicamenu.netlify.app/)
 
