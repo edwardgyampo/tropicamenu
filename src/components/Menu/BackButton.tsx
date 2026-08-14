@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { Button, ButtonVariants } from "../Button"
-import { navigationContext } from "../../lib/navigation/Provider";
 import type { NavigationItem } from "../../lib/navigation";
+import { navigationContext } from "../../lib/navigation/Provider";
+import { Button, ButtonVariants } from "../Button";
 import { GyampoIcon } from "../Icon";
-import BackIcon from "@iconify-react/material-symbols/navigate-before";
 
 
 export const BackButton = ({ item }: { item?: NavigationItem }) => {
@@ -15,7 +14,7 @@ export const BackButton = ({ item }: { item?: NavigationItem }) => {
             : { variant: ButtonVariants.IconButton }
         }
         classNameList={["Menu__BackButton"]}
-        Icon={<GyampoIcon IconType={BackIcon}/>}
+        PrimaryIcon={<GyampoIcon icon={"mdi:navigate-before"}/>}
         onClick={() => navigation.goBack()}
         disabled={!navigation.hasPastItems} />
 }

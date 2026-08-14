@@ -29,10 +29,9 @@
     gap: .1em;
     width: 100%;
     overflow-x: scroll;
-    flex-direction: row-reverse;
+    flex-direction: row;
     padding-top: .2em;;
     padding-bottom: .4em;
-    padding-left: 20%;
     padding-right: .2em;
 }
 

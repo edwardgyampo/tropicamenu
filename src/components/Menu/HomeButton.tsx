@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { navigationContext } from "../../lib/navigation/Provider";
 import { Button, ButtonVariants } from "../Button";
-import HomeIcon from "@iconify-react/material-symbols/home";
 import { GyampoIcon } from "../Icon";
 
 export const HomeButton = () => {
@@ -9,8 +8,8 @@ export const HomeButton = () => {
 
     return <Button
         disabled={navigation.currentItem?.name === navigation.root.name}
-        onClick={_ => navigation.select(navigation.root)}
-        Icon={<GyampoIcon IconType={HomeIcon} />}
+        onClick={_ => navigation.goToStart()}
+        PrimaryIcon={<GyampoIcon icon={"mdi:restart"} />}
         text="BACK TO START"
         variant={ButtonVariants.StandardButton}
         classNameList={['Menu__HomeButton']} />

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState, type PropsWithChildren } from "react";
 import { GyampoNavigation } from ".";
-import { MAIN_MENU } from "../../menus/main";
+import MAIN_MENU from "../../menus/main.json";
 
 
 export type NavigationContextValue = { navigation: GyampoNavigation };

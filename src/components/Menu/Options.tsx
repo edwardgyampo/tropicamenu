@@ -1,4 +1,3 @@
-import NextIcon from "@iconify-react/material-symbols/navigate-next";
 import { useContext, type MouseEventHandler } from "react";
 import type { ListItem } from "../../lib/list";
 import { navigationContext } from "../../lib/navigation/Provider";
@@ -25,11 +24,11 @@ export const MenuOptions = (props: MenuOptionsProps) => {
     const extraButtonProps = (item: ListItem): ButtonProps =>
         item.list && item.list.length > 0
             ? {
-                variant: ButtonVariants.StandardButtonReversed,
-                Icon: <GyampoIcon IconType={NextIcon}/>,
+                variant: ButtonVariants.StandardButton,
+                SecondaryIcon: <GyampoIcon icon={"mdi:navigate-next"} />,
                 onClick: onClickItem
             }
-            : { variant: ButtonVariants.TextButton };
+            : { variant: ButtonVariants.StandardButton };
 
 
     return <ul className={"Menu__builtinList"}>
@@ -40,6 +39,7 @@ export const MenuOptions = (props: MenuOptionsProps) => {
                 <Button
                     {...extraButtonProps(item)}
                     text={item.name}
+                    {...item.icon ? { PrimaryIcon: <GyampoIcon icon={item.icon} /> } : {}}
                     classNameList={[
                         "Menu__itemButton"
                     ]} />

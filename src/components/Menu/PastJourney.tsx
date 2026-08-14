@@ -9,7 +9,7 @@ export const PastJourney = () => {
     return <Breadcrumb
         name={"past"}
         classNameList={["PastJourney"]}
-        items={navigation.past.map(item => item)}
+        items={navigation.past.toReversed().map(item => item)}
         renderItem={item =>
             <Button
                 onClick={() => navigation.select(item)}

@@ -9,6 +9,6 @@ export const FutureJourney = () => {
     return <Breadcrumb
         classNameList={["FutureJourney"]}
         name={"future"}
-        items={navigation.future.map(item => item)}
+        items={navigation.future.toReversed().map(item => item)}
         renderItem={item => <BreadcrumbOption item={item}/>} />
 }

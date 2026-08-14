@@ -3,7 +3,6 @@ import type { NavigationItem } from "../../lib/navigation";
 import { navigationContext } from "../../lib/navigation/Provider";
 import { Button, ButtonVariants } from "../Button";
 import { GyampoIcon } from "../Icon";
-import NextIcon from "@iconify-react/material-symbols/navigate-next";
 
 export const NextButton = ({ item }: { item?: NavigationItem }) => {
     const { navigation } = useContext(navigationContext);
@@ -17,7 +16,7 @@ export const NextButton = ({ item }: { item?: NavigationItem }) => {
             : { variant: ButtonVariants.IconButton }
         }
         classNameList={["Menu__NextButton"]}
-        Icon={<GyampoIcon IconType={NextIcon}/>}
+        PrimaryIcon={<GyampoIcon icon={"mdi:navigate-next"}/>}
         onClick={() => navigation.goForward()}
         disabled={!navigation.hasFutureItems} />
 }

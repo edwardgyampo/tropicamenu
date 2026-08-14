@@ -33,10 +33,10 @@ export const Menu = (props: MenuProps) => {
 
             <div className="Menu__screens">
 
-                {navigation.isForward && navigation.backItem && <Screen
-                    key={navigation.backItem?.name}
+                {navigation.isForward && navigation.exitItem && <Screen
+                    key={navigation.exitItem?.name}
                     id="BackScreen"
-                    item={navigation.backItem}
+                    item={navigation.exitItem}
                     containerRef={ref}
                     animation={"SlideOutToLeft"} />}
 
@@ -49,10 +49,10 @@ export const Menu = (props: MenuProps) => {
                         ? "SlideInFromRight"
                         : "SlideInFromLeft"} />}
 
-                {navigation.isBackward && navigation.nextItem && <Screen
-                    key={navigation.nextItem?.name}
+                {navigation.isBackward && navigation.exitItem && <Screen
+                    key={navigation.exitItem?.name}
                     id="NextScreen"
-                    item={navigation.nextItem}
+                    item={navigation.exitItem}
                     containerRef={ref}
                     animation={"SlideOutToRight"} />}
 

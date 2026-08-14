@@ -1,0 +1,542 @@
+{
+    "name": "App",
+    "icon": "mdi:application",
+    "list": [
+        {
+            "name": "Workspace",
+            "icon": "mdi:view-dashboard-outline",
+            "list": [
+                {
+                    "name": "Overview",
+                    "icon": "mdi:home-outline",
+                    "list": [
+                        {
+                            "name": "Home",
+                            "icon": "mdi:home-outline"
+                        },
+                        {
+                            "name": "Recent Activity",
+                            "icon": "mdi:history"
+                        },
+                        {
+                            "name": "Pinned Items",
+                            "icon": "mdi:pin-outline"
+                        },
+                        {
+                            "name": "Things You Saved",
+                            "icon": "mdi:bookmark-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "Projects",
+                    "icon": "mdi:folder-multiple-outline",
+                    "list": [
+                        {
+                            "name": "All Projects",
+                            "icon": "mdi:folder-multiple-outline"
+                        },
+                        {
+                            "name": "Shared With Me",
+                            "icon": "mdi:account-multiple-outline"
+                        },
+                        {
+                            "name": "Recently Viewed",
+                            "icon": "mdi:clock-outline"
+                        },
+                        {
+                            "name": "Archived Projects",
+                            "icon": "mdi:archive-outline"
+                        },
+                        {
+                            "name": "Project Templates",
+                            "icon": "mdi:file-document-multiple-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "Team",
+                    "icon": "mdi:account-group-outline",
+                    "list": [
+                        {
+                            "name": "Members",
+                            "icon": "mdi:account-multiple-outline"
+                        },
+                        {
+                            "name": "Roles & Permissions",
+                            "icon": "mdi:shield-account-outline"
+                        },
+                        {
+                            "name": "Invitations",
+                            "icon": "mdi:email-outline"
+                        },
+                        {
+                            "name": "Groups",
+                            "icon": "mdi:account-group-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "Files & Storage",
+                    "icon": "mdi:folder-outline",
+                    "list": [
+                        {
+                            "name": "My Files",
+                            "icon": "mdi:file-multiple-outline"
+                        },
+                        {
+                            "name": "Shared Files",
+                            "icon": "mdi:folder-account-outline"
+                        },
+                        {
+                            "name": "Recent Uploads",
+                            "icon": "mdi:cloud-upload-outline"
+                        },
+                        {
+                            "name": "Storage Overview",
+                            "icon": "mdi:database-outline"
+                        },
+                        {
+                            "name": "Trash",
+                            "icon": "mdi:trash-can-outline"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Account",
+            "icon": "mdi:account-circle-outline",
+            "list": [
+                {
+                    "name": "Profile",
+                    "icon": "mdi:account-outline",
+                    "list": [
+                        {
+                            "name": "Personal Info",
+                            "icon": "mdi:card-account-details-outline"
+                        },
+                        {
+                            "name": "Profile Photo",
+                            "icon": "mdi:camera-outline"
+                        },
+                        {
+                            "name": "Preferences",
+                            "icon": "mdi:tune-variant"
+                        },
+                        {
+                            "name": "Connected Accounts",
+                            "icon": "mdi:accounts-group"
+                        }
+                    ]
+                },
+                {
+                    "name": "Security",
+                    "icon": "mdi:shield-lock-outline",
+                    "list": [
+                        {
+                            "name": "Password",
+                            "icon": "mdi:lock-outline"
+                        },
+                        {
+                            "name": "Two-Step Verification",
+                            "icon": "mdi:two-factor-authentication"
+                        },
+                        {
+                            "name": "Active Sessions",
+                            "icon": "mdi:devices"
+                        },
+                        {
+                            "name": "Login History",
+                            "icon": "mdi:history"
+                        },
+                        {
+                            "name": "Recovery Options",
+                            "icon": "mdi:backup-restore"
+                        }
+                    ]
+                },
+                {
+                    "name": "Payments",
+                    "icon": "mdi:credit-card-outline",
+                    "list": [
+                        {
+                            "name": "Current Plan",
+                            "icon": "mdi:clipboard-text-outline"
+                        },
+                        {
+                            "name": "Payment Methods",
+                            "icon": "mdi:credit-card-multiple-outline"
+                        },
+                        {
+                            "name": "Invoices",
+                            "icon": "mdi:receipt-text-outline"
+                        },
+                        {
+                            "name": "Billing History",
+                            "icon": "mdi:history"
+                        }
+                    ]
+                },
+                {
+                    "name": "Account Data",
+                    "icon": "mdi:database-outline",
+                    "list": [
+                        {
+                            "name": "Download Data",
+                            "icon": "mdi:download-outline"
+                        },
+                        {
+                            "name": "Import",
+                            "icon": "mdi:import"
+                        },
+                        {
+                            "name": "Export",
+                            "icon": "mdi:export"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Settings",
+            "icon": "mdi:cog-outline",
+            "list": [
+                {
+                    "name": "General",
+                    "icon": "mdi:tune-variant",
+                    "list": [
+                        {
+                            "name": "Language",
+                            "icon": "mdi:translate"
+                        },
+                        {
+                            "name": "Region & Time",
+                            "icon": "mdi:map-clock-outline"
+                        },
+                        {
+                            "name": "Appearance",
+                            "icon": "mdi:palette-outline"
+                        },
+                        {
+                            "name": "Default Preferences",
+                            "icon": "mdi:format-list-checks"
+                        }
+                    ]
+                },
+                {
+                    "name": "Notifications",
+                    "icon": "mdi:bell-outline",
+                    "list": [
+                        {
+                            "name": "Email Alerts",
+                            "icon": "mdi:email-alert-outline"
+                        },
+                        {
+                            "name": "Push Notifications",
+                            "icon": "mdi:bell-badge-outline"
+                        },
+                        {
+                            "name": "Mentions",
+                            "icon": "mdi:at"
+                        },
+                        {
+                            "name": "Product Updates",
+                            "icon": "mdi:package-up"
+                        },
+                        {
+                            "name": "Quiet Hours",
+                            "icon": "material-symbols:quiet-time-active"
+                        }
+                    ]
+                },
+                {
+                    "name": "Privacy",
+                    "icon": "mdi:shield-account-outline",
+                    "list": [
+                        {
+                            "name": "Visibility",
+                            "icon": "mdi:eye-outline"
+                        },
+                        {
+                            "name": "Data Sharing",
+                            "icon": "mdi:share-variant-outline"
+                        },
+                        {
+                            "name": "Activity Status",
+                            "icon": "mdi:circle-outline"
+                        },
+                        {
+                            "name": "Personalization",
+                            "icon": "mdi:account-cog-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "Appearance",
+                    "icon": "mdi:palette-outline",
+                    "list": [
+                        {
+                            "name": "Theme",
+                            "icon": "mdi:theme-light-dark"
+                        },
+                        {
+                            "name": "Colors",
+                            "icon": "mdi:palette-outline"
+                        },
+                        {
+                            "name": "Interface Density",
+                            "icon": "mdi:format-align-justify"
+                        },
+                        {
+                            "name": "Sidebar Behavior",
+                            "icon": "mdi:page-layout-sidebar-left"
+                        },
+                        {
+                            "name": "Accessibility",
+                            "icon": "mdi:human-wheelchair"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Tools",
+            "icon": "mdi:tools",
+            "list": [
+                {
+                    "name": "Integrations",
+                    "icon": "mdi:connection",
+                    "list": [
+                        {
+                            "name": "Connected Apps",
+                            "icon": "mdi:apps"
+                        },
+                        {
+                            "name": "API Access",
+                            "icon": "mdi:api"
+                        },
+                        {
+                            "name": "Webhooks",
+                            "icon": "mdi:webhook"
+                        },
+                        {
+                            "name": "Import Sources",
+                            "icon": "mdi:database-import-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "Automation",
+                    "icon": "mdi:robot-outline",
+                    "list": [
+                        {
+                            "name": "Workflows",
+                            "icon": "mdi:sitemap-outline"
+                        },
+                        {
+                            "name": "Scheduled Tasks",
+                            "icon": "mdi:calendar-clock-outline"
+                        },
+                        {
+                            "name": "Rules",
+                            "icon": "boxicons:law"
+                        },
+                        {
+                            "name": "Automated Actions",
+                            "icon": "mdi:robot-outline"
+                        },
+                        {
+                            "name": "Run History",
+                            "icon": "mdi:history"
+                        }
+                    ]
+                },
+                {
+                    "name": "Developer",
+                    "icon": "mdi:code-tags",
+                    "list": [
+                        {
+                            "name": "API Keys",
+                            "icon": "mdi:key-outline"
+                        },
+                        {
+                            "name": "Webhooks",
+                            "icon": "mdi:webhook"
+                        },
+                        {
+                            "name": "Logs",
+                            "icon": "mdi:text-box-search-outline"
+                        },
+                        {
+                            "name": "Environments",
+                            "icon": "mdi:server-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "Analytics",
+                    "icon": "mdi:chart-line",
+                    "list": [
+                        {
+                            "name": "Overview",
+                            "icon": "mdi:chart-box-outline"
+                        },
+                        {
+                            "name": "Usage",
+                            "icon": "mdi:chart-donut"
+                        },
+                        {
+                            "name": "Performance",
+                            "icon": "mdi:speedometer"
+                        },
+                        {
+                            "name": "Export Reports",
+                            "icon": "mdi:file-chart-outline"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Support",
+            "icon": "mdi:lifebuoy",
+            "list": [
+                {
+                    "name": "Help Center",
+                    "icon": "mdi:help-circle-outline",
+                    "list": [
+                        {
+                            "name": "Getting Started",
+                            "icon": "mdi:rocket-launch-outline"
+                        },
+                        {
+                            "name": "Guides & Tutorials",
+                            "icon": "mdi:book-open-outline"
+                        },
+                        {
+                            "name": "Frequently Asked Questions",
+                            "icon": "mdi:frequently-asked-questions"
+                        },
+                        {
+                            "name": "Troubleshooting",
+                            "icon": "mdi:tools"
+                        }
+                    ]
+                },
+                {
+                    "name": "Contact",
+                    "icon": "mdi:email-outline",
+                    "list": [
+                        {
+                            "name": "Support",
+                            "icon": "mdi:face-agent"
+                        },
+                        {
+                            "name": "Send Feedback",
+                            "icon": "mdi:message-text-outline"
+                        },
+                        {
+                            "name": "Report an Issue",
+                            "icon": "mdi:bug-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "About",
+                    "icon": "mdi:information-outline",
+                    "list": [
+                        {
+                            "name": "About the App",
+                            "icon": "mdi:information-outline"
+                        },
+                        {
+                            "name": "Release Notes",
+                            "icon": "mdi:note-text-outline"
+                        },
+                        {
+                            "name": "System Status",
+                            "icon": "icon-park-outline:system"
+                        },
+                        {
+                            "name": "Terms & Policies",
+                            "icon": "mdi:file-document-outline"
+                        },
+                        {
+                            "name": "Version Information",
+                            "icon": "mdi:information-variant"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Quick Access",
+            "icon": "mdi:flash-outline",
+            "list": [
+                {
+                    "name": "Create",
+                    "icon": "mdi:plus-circle-outline",
+                    "list": [
+                        {
+                            "name": "New Project",
+                            "icon": "mdi:folder-plus-outline"
+                        },
+                        {
+                            "name": "New Document",
+                            "icon": "mdi:file-plus-outline"
+                        },
+                        {
+                            "name": "New Team Member",
+                            "icon": "mdi:account-plus-outline"
+                        },
+                        {
+                            "name": "New Automation",
+                            "icon": "mdi:robot-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "Recent",
+                    "icon": "mdi:history",
+                    "list": [
+                        {
+                            "name": "Recently Opened",
+                            "icon": "mdi:clock-outline"
+                        },
+                        {
+                            "name": "Recently Edited",
+                            "icon": "mdi:file-edit-outline"
+                        },
+                        {
+                            "name": "Recently Shared",
+                            "icon": "mdi:share-variant-outline"
+                        }
+                    ]
+                },
+                {
+                    "name": "Favorites",
+                    "icon": "mdi:star-outline",
+                    "list": [
+                        {
+                            "name": "Starred Projects",
+                            "icon": "mdi:star-outline"
+                        },
+                        {
+                            "name": "Saved Views",
+                            "icon": "mdi:bookmark-outline"
+                        },
+                        {
+                            "name": "Important Files",
+                            "icon": "mdi:file-star-outline"
+                        },
+                        {
+                            "name": "Pinned Shortcuts",
+                            "icon": "mdi:pin-outline"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

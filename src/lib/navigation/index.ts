@@ -24,6 +24,7 @@ export class GyampoNavigation {
     direction?: NavigationDirection
     animations = ["SlideInFromRight", "SlideOutToRight", "SlideInFromLeft", "SlideOutToLeft"];
     eventEmitter = new EventTarget();
+    exitItem?: NavigationItem;  // May not be the last item in past or future.
 
 
     constructor(item: NavigationItem) {
@@ -71,7 +72,7 @@ export class GyampoNavigation {
     get isForward() {
         return this.direction === "Forward";
     }
-    
+
     get isBackward() {
         return this.direction === "Backward";
     }
@@ -141,6 +142,8 @@ export class GyampoNavigation {
 
     select(item: NavigationItem) {
         if (this.present?.name === item.name) return;
+        
+        this.exitItem = { ...this.present } as NavigationItem;
 
         const selectedItem =
             this.selectItemFromHistory(item)
@@ -174,6 +177,10 @@ export class GyampoNavigation {
             = this.future[this.future.length - 1];
         if (!mostRecentItemFromFuture?.name) return;
         this.select(mostRecentItemFromFuture);
+    }
+
+    goToStart() {
+        this.select(this.root);
     }
 
     getItemFromPast(item: NavigationItem) {

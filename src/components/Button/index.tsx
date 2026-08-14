@@ -19,8 +19,9 @@ export type ButtonVariant = ButtonVariants[keyof ButtonVariants];
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     text?: string;
-    Icon?: ReactElement<GyampoIconComponent>;
-    variant?: ButtonVariant
+    PrimaryIcon?: ReactElement<GyampoIconComponent>;
+    SecondaryIcon?: ReactElement<GyampoIconComponent>;
+    variant?: ButtonVariant;
 };
 
 export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
@@ -29,7 +30,8 @@ export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
         variant = "StandardButton",
         children,
         text,
-        Icon,
+        PrimaryIcon,
+        SecondaryIcon,
         ...builtinProps
     } = props;
 
@@ -38,21 +40,16 @@ export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
         || variant === "TextButton"
     ) && text;
 
-    const hasIcon = (variant === "StandardButton"
-        || variant === "StandardButtonReversed"
-        || variant === "IconButton"
-    ) && Icon;
-
     return <GyampoComponent
         {...builtinProps}
         as="button"
         classNameList={[...classNameList, "Button", variant ? `Button--${variant}` : ""]}>
         {children || <>
-            {hasIcon
+            {variant !== "TextButton" && PrimaryIcon
                 && <GyampoComponent
                     as="span"
                     classNameList={["Button__icon"]} >
-                    {Icon}
+                    {PrimaryIcon}
                 </GyampoComponent>}
 
             {hasText
@@ -61,6 +58,13 @@ export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
                     className="Button__text">
                     {text}
                 </span>}
+
+            {variant !== "TextButton" && SecondaryIcon
+                && <GyampoComponent
+                    as="span"
+                    classNameList={["Button__icon"]} >
+                    {SecondaryIcon}
+                </GyampoComponent>}
         </>}
     </GyampoComponent >
 }

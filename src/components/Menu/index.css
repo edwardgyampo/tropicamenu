@@ -94,6 +94,11 @@
     row-gap: .4em;
 }
 
+.PastJourney :where(.Breadcrumb__list) {
+    padding-left: 50%;
+    flex-direction: row-reverse;
+}
+
 .Menu__HomeButton,
 .Menu__BackButton:not(:disabled),
 .Menu__NextButton:not(:disabled) {
