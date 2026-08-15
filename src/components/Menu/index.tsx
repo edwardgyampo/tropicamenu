@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react";
 import { navigationContext } from "../../lib/navigation/Provider";
 import { GyampoComponent } from "../Component";
-import { Screen } from "../Screen";
+import { Screen, ScreenAnimations } from "../Screen";
 import { Stack } from "../Stack";
 import { FutureJourney } from "./FutureJourney";
 import "./index.css";
@@ -38,23 +38,25 @@ export const Menu = (props: MenuProps) => {
                     id="BackScreen"
                     item={navigation.exitItem}
                     containerRef={ref}
-                    animation={"SlideOutToLeft"} />}
+                    animation={ScreenAnimations.SlideOutToLeft} />}
 
                 {navigation.currentItem && <Screen
                     key={navigation.currentItem.name}
                     id="CurrentScreen"
                     item={navigation.currentItem}
                     containerRef={ref}
-                    animation={navigation.isForward
-                        ? "SlideInFromRight"
-                        : "SlideInFromLeft"} />}
+                    animation={
+                        navigation.isForward
+                            ? ScreenAnimations.SlideInFromRight
+                            : ScreenAnimations.SlideInFromLeft
+                    } />}
 
                 {navigation.isBackward && navigation.exitItem && <Screen
                     key={navigation.exitItem?.name}
                     id="NextScreen"
                     item={navigation.exitItem}
                     containerRef={ref}
-                    animation={"SlideOutToRight"} />}
+                    animation={ScreenAnimations.SlideOutToRight} />}
 
             </div>
         </div>

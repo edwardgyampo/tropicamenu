@@ -1,5 +1,5 @@
 .Menu {
-    background-color: oklch(var(--lightness-4) var(--chroma-5) var(--hue-primary));
+    background-color: oklch(from var(--color-primary) var(--lightness-4) var(--chroma-5) h);
     border-radius: var(--radius-lg);
 }
 
@@ -79,15 +79,15 @@
 }
 
 .Menu__title {
-    font-size: var(--font-size-lg);
     padding: var(--space-2);
+    font-size: var(--font-size-lg);
     text-transform: capitalize;
     text-align: center;
     color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
     letter-spacing: var(--tracking-wide);
     border-width: var(--border-width-medium) 0;
     border-style: solid;
-    border-color: oklch(var(--lightness-5) var(--chroma-4) var(--hue-secondary));
+    border-color: oklch(var(--lightness-7) var(--chroma-5) var(--hue-secondary) / .5);
 }
 
 .Menu__breadcrumbs {

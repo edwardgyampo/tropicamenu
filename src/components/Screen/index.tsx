@@ -9,10 +9,19 @@ import { MenuOptions } from "../Menu/Options";
 import { Stack } from "../Stack";
 import "./index.css";
 
+export const ScreenAnimations = {
+    SlideInFromRight: "SlideInFromRight",
+    SlideInFromLeft: "SlideInFromLeft",
+    SlideOutToLeft: "SlideOutToLeft",
+    SlideOutToRight: "SlideOutToRight"
+} as const;
+
+export type ScreenAnimation = typeof ScreenAnimations[keyof typeof ScreenAnimations];
+
 export type ScreenComponentProps = GyampoComponentProps<"div", {
     item: NavigationItem,
     containerRef: RefObject<HTMLDivElement | null>,
-    animation: "SlideInFromRight" | "SlideOutToLeft" | "SlideInFromLeft" | "SlideOutToRight"
+    animation: ScreenAnimation
 }>;
 
 export const Screen = (props: ScreenComponentProps) => {

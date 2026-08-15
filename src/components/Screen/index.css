@@ -17,8 +17,8 @@
 }
 
 .Screen {
-    animation-duration: var(--duration-normal);
-    animation-timing-function: ease-out;
+    animation-duration: var(--duration-slow);
+    animation-timing-function: var(--ease-standard);
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: forwards;
