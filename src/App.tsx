@@ -13,12 +13,6 @@ function App() {
         <NavigationProvider>
           <Menu />
         </NavigationProvider>
-        <NavigationProvider>
-          <Menu />
-        </NavigationProvider>
-        <NavigationProvider>
-          <Menu />
-        </NavigationProvider>
       </Stack>
     </>
   )
