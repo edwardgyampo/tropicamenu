@@ -22,5 +22,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: oklch(from var(--color-primary) var(--lightness-2) var(--chroma-4) h);
+  background-color: oklch(from var(--color-primary) var(--lightness-2) var(--chroma-3) h);
 }
