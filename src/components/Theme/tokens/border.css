@@ -1,0 +1,8 @@
+.Theme {
+    --border-width-thin: 1px;
+    --border-width-medium: 2px;
+    
+    --border-subtle: oklch(var(--lightness-e) var(--chroma-0) var(--hue-primary) / var(--opacity-7));
+    --border-default: oklch(var(--lightness-c) var(--chroma-0) var(--hue-primary) / var(--opacity-9));
+    --border-strong: oklch(var(--lightness-8) var(--chroma-0) var(--hue-primary) / var(--opacity-b));
+}

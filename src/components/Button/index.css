@@ -1,22 +1,22 @@
 .Button {
-    --border-width: .1rem;
-
+    --padding: var(--space-1);
     user-select: none;
     font-size: inherit;
     display: inline-flex;
-    column-gap: .9em;
+    gap: var(--space-2);
     align-items: center;
     justify-content: space-between;
-    padding: .6em;
+    padding: var(--padding) calc(3 * var(--padding));
     cursor: pointer;
     outline: none;
     border: none;
-    border-width: var(--border-width);
+    border-width: var(--border-width-medium);
     border-style: solid;
     border-color: transparent;
-    border-radius: .8em;
+    border-radius: var(--radius-lg);
     background-color: transparent;
-    transition: background-color 200ms, color 200ms ease-out;
+    transition: background-color var(--duration-normal), color var(--duration-normal) ease-out;
+    color: var(--color-on-primary);
 }
 
 .Button__icon {
@@ -34,24 +34,23 @@
 }
 
 .Button:hover {
-    background-color: hsl(from var(--background-color) h s calc(l + 12) / .5);
-    color: hsl(from var(--color) h s calc(l - 20));
+    background-color: oklch(var(--lightness-b) var(--chroma-5) var(--hue-secondary));
+    color: oklch(var(--lightness-2) var(--chroma-4) var(--hue-secondary));
 }
 
 .Button:active {
-    background-color: hsl(from var(--background-color) h s calc(l + 6));
-    color: hsl(from var(--color) h s calc(l - 30));
+    background-color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
+    color: oklch(var(--lightness-1) var(--chroma-4) var(--hue-secondary));
 }
 
 .Button:focus-visible {
-    color: hsl(from var(--color) h s calc(l - 30));
-    border-color: hsl(from var(--color) h s calc(l - 30) / .5);
+    border-color: oklch(var(--lightness-c) var(--chroma-4) var(--hue-secondary));
 }
 
 .Button:disabled {
     pointer-events: none;
-    background-color: hsl(from var(--background-color) h s calc(l + 2));
-    color: hsl(from var(--color) h s calc(l - 80));
+    background-color: oklch(var(--lightness-4) var(--chroma-4) var(--hue-primary));
+    color: oklch(var(--lightness-6) var(--chroma-4) var(--hue-primary));
 }
 
 .Button--TextButton {
@@ -63,6 +62,6 @@
 }
 
 .Button--IconButton {
-    padding: .6em;
+    padding: var(--padding);
     border-radius: .5rem;
 }

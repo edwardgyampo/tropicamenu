@@ -4,20 +4,20 @@
     min-width: max-content;
     display: flex;
     flex-direction: column;
-    gap: .5em;
-    border-width: .2rem;
+    border-width: var(--border-width-medium);
     overflow: hidden;
 }
 
 .Screen__navigation {
     display: flex;
     justify-content: space-between;
-    padding: .4em .4em 0 .4em;
-    font-size: .7em;
+    padding: var(--space-2);
+    gap: var(--space-3);
+    font-size: var(--font-size-xs);
 }
 
 .Screen {
-    animation-duration: var(--animation-duration);
+    animation-duration: var(--duration-normal);
     animation-timing-function: ease-out;
     animation-iteration-count: 1;
     animation-direction: normal;

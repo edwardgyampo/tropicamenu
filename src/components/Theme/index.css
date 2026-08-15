@@ -1,46 +1,26 @@
 /* WIP: not used yet */
+@import "./tokens/font.css";
 @import "./tokens/color.css";
+@import "./tokens/space.css";
+@import "./tokens/border.css";
+@import "./tokens/radius.css";
+@import "./tokens/shadow.css";
+@import "./tokens/motion.css";
 
 .Theme {
   --font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
 
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 
   font-family: var(--font-family);
-  letter-spacing: 0.18px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color-scheme: light dark;
-
-  --background-color-h: 18deg;
-  --background-color-s: 14%;
-  --background-color-l: 90%;
-  --background-color-hsl: var(--background-color-h) var(--background-color-s) var(--background-color-l);
-  --background-color: hsl(var(--background-color-hsl));
-
-  background-color: hsl(from var(--background-color) h s calc(l - 4));
-  color: var(--color);
-}
-
-@media (prefers-color-scheme: dark) {
-  .Theme {
-    --color-h: 0deg;
-    --color-s: 0%;
-    --color-l: 100%;
-    --color-hsl: var(--color-h) var(--color-s) var(--color-l);
-    --color: hsl(var(--color-hsl));
-
-    --background-color-h: 231deg;
-    --background-color-s: 14%;
-    --background-color-l: 10%;
-    --background-color-hsl: var(--background-color-h) var(--background-color-s) var(--background-color-l);
-    --background-color: hsl(var(--background-color-hsl));
-  }
+  background-color: oklch(from var(--color-primary) var(--lightness-2) var(--chroma-4) h);
 }

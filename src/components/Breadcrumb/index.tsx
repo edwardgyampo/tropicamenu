@@ -31,10 +31,10 @@ export const Breadcrumb = (props: BreadcrumbProps) => {
     const BreadcrumbItems = () => items.map((item, index) => {
         return index > 0
             ? [
-                <Item key={index + "s"}>
+                <Item key={"s_" + index}>
                     <GyampoIcon icon={"mdi:navigate-next"}/>
                 </Item>,
-                <Item key={"i" + index}>
+                <Item key={"i_" + index}>
                     {renderItem(item)}
                 </Item>
             ]
@@ -54,7 +54,7 @@ export const Breadcrumb = (props: BreadcrumbProps) => {
         </span>
 
         <ul className="Breadcrumb__list">
-
+            
             <BreadcrumbItems />
 
         </ul>

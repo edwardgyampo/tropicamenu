@@ -5,11 +5,12 @@ import MAIN_MENU from "../../menus/main.json";
 
 export type NavigationContextValue = { navigation: GyampoNavigation };
 
-const navigation = new GyampoNavigation(MAIN_MENU);
-
-export const navigationContext = createContext<NavigationContextValue>({ navigation });
+export const navigationContext = createContext<NavigationContextValue>({
+    navigation: new GyampoNavigation({ name: ""})
+});
 
 export const NavigationProvider = ({ children }: PropsWithChildren) => {
+    const navigation = new GyampoNavigation(MAIN_MENU);
     const [state, setState] = useState<NavigationContextValue>({ navigation });
 
     useEffect(() => {

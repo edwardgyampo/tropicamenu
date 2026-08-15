@@ -1,10 +1,10 @@
 // A wrapper component to serve as the base of all components.
 import type React from "react"
-import { compoundClassName } from "../../lib/compoundClassName";
+import { classNameFrom } from "../../lib/classNameFrom";
 
 
 export type GyampoBaseComponentProps<T = {}> = T & {
-    classNameList?: Parameters<typeof compoundClassName>[0]
+    classNameList?: Parameters<typeof classNameFrom>[0]
 }
 
 export type GyampoComponentProps<T extends React.ElementType = "div", U = {}> =
@@ -23,7 +23,7 @@ export const GyampoComponent = <T extends React.ElementType = "div">(props: Gyam
     return <ElementType
         ref={props.ref}
         {...builtinProps}
-        className={compoundClassName([
+        className={classNameFrom([
             "Component",
             ...classNameList || [],
             className,

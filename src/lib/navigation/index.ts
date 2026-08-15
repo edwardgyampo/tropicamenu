@@ -39,7 +39,7 @@ export class GyampoNavigation {
         let past: NavigationItem[] = [...this.past];
         let future: NavigationItem[] = [...this.future];
 
-        console.log(item.name + ' selected from history');
+        // console.log(item.name + ' selected from history');
         const removedPast = past.splice(this.getIndexOfItemFromPast(item));
         const futureAppendage = removedPast.splice(1);
 
@@ -84,11 +84,11 @@ export class GyampoNavigation {
         let past: NavigationItem[] = [...this.past];
         let future: NavigationItem[] = [...this.future];
 
-        console.log(`"${item.name}" selected from future`);
+        // console.log(`"${item.name}" selected from future`);
 
         const removedFuture = future.splice(this.getIndexOfItemFromFuture(item));
         const pastAppendage = removedFuture.splice(1);
-        console.log({ pastAppendage });
+        // console.log({ pastAppendage });
 
 
         past = this.present
@@ -119,7 +119,7 @@ export class GyampoNavigation {
 
         let past: NavigationItem[] = [...this.past];
 
-        console.log(`"${item.name}" selected from present`);
+        // console.log(`"${item.name}" selected from present`);
 
         past = this.present
             ? [

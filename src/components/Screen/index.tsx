@@ -26,11 +26,11 @@ export const Screen = (props: ScreenComponentProps) => {
 
     const ref = useRef<HTMLDivElement>(null);
     const { navigation } = useContext(navigationContext);
-    
+
     useLayoutEffect(() => {
         const updateSize = () => {
             if (!ref.current || !props.containerRef.current) return;
-            
+
             ref.current.inert = ref.current.id !== "CurrentScreen";
 
             const rect = ref.current!.getBoundingClientRect();
@@ -66,8 +66,7 @@ export const Screen = (props: ScreenComponentProps) => {
 
         <Stack
             direction="column"
-            classNameList={["Screen__navigation"]}
-            style={{ gap: ".4em" }}>
+            classNameList={["Screen__navigation"]}>
 
             <Stack
                 direction="row"
@@ -75,13 +74,18 @@ export const Screen = (props: ScreenComponentProps) => {
                 <HomeButton />
             </Stack>
 
-            <div style={{ alignSelf: "flex-end" }}>
-                <NextButton item={item.nextItem} />
-            </div>
 
-            <div style={{ alignSelf: "flex-start" }}>
+            <Stack
+                direction="row"
+                style={{
+                    alignItems: "center",
+                    justifyContent: "space-between"
+                }}>
+
                 <BackButton item={item.backItem} />
-            </div>
+
+                <NextButton item={item.nextItem} />
+            </Stack>
 
         </Stack>
 

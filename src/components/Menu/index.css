@@ -1,7 +1,7 @@
 .Menu {
     --animation-duration: 300ms;
-    background-color: hsl(from var(--background-color) h s calc(l + 2));
-    border-radius: .5em;
+    background-color: oklch(var(--lightness-4) var(--chroma-5) var(--hue-primary));
+    border-radius: var(--radius-lg);
 }
 
 .Menu:not(:where(.Menu--debug)) {
@@ -10,7 +10,7 @@
 
 .Menu--debug .Screen,
 .Menu--debug :where(.Menu__navigationPaths) {
-    border-width: 1px;
+    border-width: var(--border-width-medium);
     border-style: solid;
 }
 
@@ -27,9 +27,11 @@
 }
 
 .Menu__navigationPaths {
-    gap: .4em;
-    padding: .4em;
+    gap: var(--space-2);
+    padding: var(--space-2);
     border-color: rgb(255, 255, 113);
+    scrollbar-color:
+        oklch(from var(--color-primary) var(--lightness-8) var(--chroma-5) h) oklch(from var(--color-primary) var(--lightness-4) var(--chroma-5) h);
 }
 
 .Menu:not(.Menu--debug) :where(.Menu__navigationPaths) {
@@ -38,14 +40,14 @@
 
 .Menu__screens,
 .Menu__wrapper {
-    transition-duration: var(--animation-duration);
+    transition-duration: var(--duration-normal);
     transition-timing-function: ease-out;
 }
 
 .Menu__wrapper {
     display: flex;
     flex-direction: column;
-    row-gap: .4em;
+    row-gap: var(--space-2);
     width: var(--CurrentScreen-width);
     transition-property: width;
 }
@@ -58,15 +60,15 @@
 }
 
 .MenuBody {
-    padding: .4em;
+    padding: var(--space-2);
 }
 
 .Menu__builtinList {
     list-style: none;
     display: flex;
     flex-direction: column;
-    border-radius: .8em;
-    padding: 0 .4em .4em .4em;
+    border-radius: var(--radius-lg);
+    padding: var(--space-2);
 }
 
 .Menu__item {
@@ -75,35 +77,27 @@
 
 .Menu__itemButton {
     width: 100%;
-    color: hsl(from var(--color) h s calc(l - 8));
 }
 
 .Menu__title {
-    font-size: .8em;
-    padding: .4em 0;
+    font-size: var(--font-size-lg);
+    padding: var(--space-2);
     text-transform: capitalize;
     text-align: center;
-    color: hsl(from var(--color) h s calc(l - 40));
-    letter-spacing: .05em;
-    border-width: .1rem 0;
+    color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
+    letter-spacing: var(--tracking-wide);
+    border-width: var(--border-width-medium) 0;
     border-style: solid;
-    border-color: hsl(from var(--background-color) h s calc(l + 8));
+    border-color: oklch(var(--lightness-5) var(--chroma-4) var(--hue-secondary));
 }
 
 .Menu__breadcrumbs {
     display: flex;
     flex-direction: column;
-    row-gap: .4em;
+    row-gap: var(--space-2);
 }
 
 .PastJourney :where(.Breadcrumb__list) {
     padding-left: 50%;
     flex-direction: row-reverse;
-}
-
-.Menu__HomeButton,
-.Menu__BackButton:not(:disabled),
-.Menu__NextButton:not(:disabled) {
-    color: hsl(from var(--color) h s calc(l - 35));
-    font-weight: bold;
 }
