@@ -1,7 +1,8 @@
 # tropicamenu
 
-I created tropicamenu to test my understanding when I first learnt React.js.
-I've rewritten it to make it a bit better. Memories :)
+Created Tropicamenu, a nestable menu UI project, when I was first learning React.js. It supports tree-structured JSON options. I rewrote the core using a different approach to improve it with new features.
+
+Memories :)
 
 Highlights:
 - JSON Menu Options.
