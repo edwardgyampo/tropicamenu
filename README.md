@@ -8,7 +8,7 @@ Highlights:
 - Tree-like Navigation.
 - Unlimited menu depth.
 - Size & screen transitions.
-- Debug mode via Menu prop.
+- Debug mode via "debug" prop.
   
 [Preview](https://tropicamenu.netlify.app/)
 
