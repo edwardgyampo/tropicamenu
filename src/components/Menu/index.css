@@ -1,5 +1,4 @@
 .Menu {
-    --animation-duration: 300ms;
     background-color: oklch(var(--lightness-4) var(--chroma-5) var(--hue-primary));
     border-radius: var(--radius-lg);
 }
