@@ -48,7 +48,7 @@ export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
             {variant !== "TextButton" && PrimaryIcon
                 && <GyampoComponent
                     as="span"
-                    classNameList={["Button__icon"]} >
+                    classNameList={["Button__primaryIcon", "Button__icon"]} >
                     {PrimaryIcon}
                 </GyampoComponent>}
 
@@ -62,7 +62,7 @@ export const Button = (props: GyampoBaseComponentProps<ButtonProps>) => {
             {variant !== "TextButton" && SecondaryIcon
                 && <GyampoComponent
                     as="span"
-                    classNameList={["Button__icon"]} >
+                    classNameList={["Button__secondaryIcon", "Button__icon"]} >
                     {SecondaryIcon}
                 </GyampoComponent>}
         </>}

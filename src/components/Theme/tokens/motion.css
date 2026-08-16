@@ -1,8 +1,10 @@
 .Theme {
     /* Motion Duration */
-    --duration-fast: 100ms;
-    --duration-normal: 200ms;
+    --duration-very-fast: 100ms;
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
     --duration-slow: 400ms;
+    --duration-very-slow: 500ms;
 
     /* Motion Easing */
     --ease-standard: cubic-bezier(0.2, 0, 0, 1);

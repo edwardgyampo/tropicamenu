@@ -12,5 +12,5 @@ export const HomeButton = () => {
         PrimaryIcon={<GyampoIcon icon={"mdi:restart"} />}
         text="BACK TO START"
         variant={ButtonVariants.StandardButton}
-        classNameList={['Menu__HomeButton']} />
+        classNameList={['Screen__HomeButton']} />
 }

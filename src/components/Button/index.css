@@ -1,21 +1,21 @@
 .Button {
-    --padding: var(--space-1);
     user-select: none;
     font-size: inherit;
     display: inline-flex;
     gap: var(--space-2);
     align-items: center;
     justify-content: space-between;
-    padding: var(--padding) calc(3 * var(--padding));
+    padding: var(--space-1) var(--space-3);
     cursor: pointer;
     outline: none;
     border: none;
     border-width: var(--border-width-medium);
     border-style: solid;
     border-color: transparent;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     background-color: transparent;
-    transition: background-color var(--duration-normal), color var(--duration-normal) ease-out;
+    transition-property: color, background-color, border-color;
+    transition-duration: var(--duration-normal);
     color: var(--color-on-primary);
 }
 
@@ -38,18 +38,18 @@
     color: oklch(var(--lightness-2) var(--chroma-4) var(--hue-secondary));
 }
 
-.Button:active {
-    background-color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
-    color: oklch(var(--lightness-1) var(--chroma-4) var(--hue-secondary));
-}
-
 .Button:focus-visible {
     border-color: oklch(var(--lightness-c) var(--chroma-4) var(--hue-secondary));
 }
 
+.Button:active {
+    background-color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
+    color: oklch(var(--lightness-1) var(--chroma-4) var(--hue-secondary));
+    border-color: transparent;
+}
+
 .Button:disabled {
     pointer-events: none;
-    background-color: oklch(var(--lightness-4) var(--chroma-4) var(--hue-primary));
     color: oklch(var(--lightness-6) var(--chroma-4) var(--hue-primary));
 }
 

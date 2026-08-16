@@ -73,28 +73,17 @@ export const Screen = (props: ScreenComponentProps) => {
         ref={ref}
         classNameList={classNames}>
 
-        <Stack
-            direction="column"
-            classNameList={["Screen__navigation"]}>
+        <GyampoComponent classNameList={["Screen__quickActions"]}>
 
-            <Stack
-                direction="row"
-                style={{ justifyContent: "center" }}>
-                <HomeButton />
-            </Stack>
+            <HomeButton />
 
+        </GyampoComponent>
 
-            <Stack
-                direction="row"
-                style={{
-                    alignItems: "center",
-                    justifyContent: "space-between"
-                }}>
+        <Stack direction="row" classNameList={["Screen__navigation"]}>
 
-                <BackButton item={item.backItem} />
+            <BackButton item={item.backItem} />
 
-                <NextButton item={item.nextItem} />
-            </Stack>
+            <NextButton item={item.nextItem} />
 
         </Stack>
 

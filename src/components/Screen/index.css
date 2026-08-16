@@ -8,12 +8,18 @@
     overflow: hidden;
 }
 
-.Screen__navigation {
+.Screen__quickActions {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: var(--space-2);
-    gap: var(--space-3);
     font-size: var(--font-size-xs);
+}
+
+.Screen__navigation {
+    padding: var(--space-2);
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
 }
 
 .Screen {
