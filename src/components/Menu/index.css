@@ -80,14 +80,14 @@
 
 .Menu__title {
     padding: var(--space-2);
-    font-size: var(--font-size-lg);
-    text-transform: capitalize;
-    text-align: center;
-    color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
-    letter-spacing: var(--tracking-wide);
     border-width: var(--border-width-medium) 0;
     border-style: solid;
     border-color: oklch(var(--lightness-7) var(--chroma-5) var(--hue-secondary) / .5);
+    text-align: center;
+    font-size: var(--font-size-lg);
+    text-transform: capitalize;
+    letter-spacing: var(--tracking-wider);
+    color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
 }
 
 .Menu__breadcrumbs {
