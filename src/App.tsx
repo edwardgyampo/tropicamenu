@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavigationProvider>
-        <Menu debug />
+        <Menu  />
       </NavigationProvider>
     </>
   )
