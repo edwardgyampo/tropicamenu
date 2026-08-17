@@ -50,6 +50,7 @@
 
 .Button:disabled {
     pointer-events: none;
+    background-color: oklch(var(--lightness-3) var(--chroma-4) var(--hue-primary));
     color: oklch(var(--lightness-6) var(--chroma-4) var(--hue-primary));
 }
 
@@ -63,5 +64,4 @@
 
 .Button--IconButton {
     padding: var(--padding);
-    border-radius: .5rem;
 }
