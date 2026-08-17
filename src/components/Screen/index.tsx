@@ -75,7 +75,7 @@ export const Screen = (props: ScreenComponentProps) => {
 
         <GyampoComponent classNameList={["Screen__quickActions"]}>
 
-            <HomeButton />
+            <HomeButton item={props.item} />
 
         </GyampoComponent>
 
