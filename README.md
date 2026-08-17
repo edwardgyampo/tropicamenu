@@ -14,5 +14,5 @@ Highlights:
 [Open Live Preview ↗](https://tropicamenu.netlify.app/)
 
 <picture>
-    <img src="https://otagungu.sirv.com/My%20Github/tropicamenu-5.png" alt="Screenshot of tropicamenus ">
+    <img src="https://otagungu.sirv.com/My%20Github/tropicamenu-6.png" alt="Screenshot of tropicamenus ">
 </picture>
