@@ -34,7 +34,7 @@
 }
 
 .Button:hover {
-    background-color: oklch(var(--lightness-b) var(--chroma-5) var(--hue-secondary));
+    background-color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
     color: oklch(var(--lightness-2) var(--chroma-4) var(--hue-secondary));
 }
 
@@ -43,7 +43,7 @@
 }
 
 .Button:active {
-    background-color: oklch(var(--lightness-c) var(--chroma-6) var(--hue-secondary));
+    background-color: oklch(var(--lightness-b) var(--chroma-5) var(--hue-secondary));
     color: oklch(var(--lightness-1) var(--chroma-4) var(--hue-secondary));
     border-color: transparent;
 }
