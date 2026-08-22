@@ -35,7 +35,7 @@ export const Menu = (props: MenuProps) => {
             <div className="Menu__screens">
 
                 {navigation.isForward && navigation.exitItem && <Screen
-                    key={navigation.exitItem?.name}
+                    key={navigation.exitItem.name}
                     id={ScreenIds.BackScreen}
                     item={navigation.exitItem}
                     containerRef={ref}
@@ -53,7 +53,7 @@ export const Menu = (props: MenuProps) => {
                     } />}
 
                 {navigation.isBackward && navigation.exitItem && <Screen
-                    key={navigation.exitItem?.name}
+                    key={navigation.exitItem.name}
                     id={ScreenIds.NextScreen}
                     item={navigation.exitItem}
                     containerRef={ref}
