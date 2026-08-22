@@ -5,26 +5,26 @@ import { GyampoComponent, type GyampoComponentProps } from "../../GyampoComponen
 import { BackButton } from "../BackButton";
 import { HomeButton } from "../HomeButton";
 import { NextButton } from "../NextButton";
-import { MenuOptions } from "../../Options";
+import { TopicaMenuOptions } from "../Options/Options";
 import { Stack } from "../Stack";
 import "./index.css";
 
-export const ScreenAnimations = {
+export const TropicaMenuScreenAnimations = {
     SlideInFromRight: "SlideInFromRight",
     SlideInFromLeft: "SlideInFromLeft",
     SlideOutToLeft: "SlideOutToLeft",
     SlideOutToRight: "SlideOutToRight"
 } as const;
 
-export type ScreenAnimation = typeof ScreenAnimations[keyof typeof ScreenAnimations];
+export type TropicaMenuScreenAnimation = typeof TropicaMenuScreenAnimations[keyof typeof TropicaMenuScreenAnimations];
 
-export type ScreenComponentProps = GyampoComponentProps<"div", {
+export type TropicaMenuScreenComponentProps = GyampoComponentProps<"div", {
     item: NavigationItem,
     containerRef: RefObject<HTMLDivElement | null>,
-    animation: ScreenAnimation
+    animation: TropicaMenuScreenAnimation
 }>;
 
-export const Screen = (props: ScreenComponentProps) => {
+export const TropicaMenuScreen = (props: TropicaMenuScreenComponentProps) => {
     const {
         animation,
         item,
@@ -91,7 +91,7 @@ export const Screen = (props: ScreenComponentProps) => {
             {item.name}
         </p>
 
-        <MenuOptions items={props.item.list} />
+        <TopicaMenuOptions items={props.item.list} />
 
     </GyampoComponent>
 }

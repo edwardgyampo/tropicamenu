@@ -1,1 +1,1 @@
-export { Screen, ScreenAnimations } from "./Screen"
+export { TropicaMenuScreen, TropicaMenuScreenAnimations } from "./Screen"

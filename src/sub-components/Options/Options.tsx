@@ -1,14 +1,14 @@
 import { useContext, useMemo, type MouseEventHandler } from "react";
-import type { ListItem } from "./List";
-import { TopicaMenuContext } from "./Provider";
-import { Button, ButtonVariants, type ButtonProps } from "./sub-components/Button/Button";
-import { GyampoIcon } from "./GyampoIcon/GyampoIcon";
+import type { ListItem } from "../../List";
+import { TopicaMenuContext } from "../../Provider";
+import { Button, ButtonVariants, type ButtonProps } from "../Button/Button";
+import { GyampoIcon } from "../../GyampoIcon/GyampoIcon";
 
-export type MenuOptionsProps = {
+export type TropicaMenuOptionsProps = {
     items?: ListItem[]
 };
 
-export const MenuOptions = (props: MenuOptionsProps) => {
+export const TopicaMenuOptions = (props: TropicaMenuOptionsProps) => {
     const { items = [] } = props;
     const { navigation } = useContext(TopicaMenuContext);
 
