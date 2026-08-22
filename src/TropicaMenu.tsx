@@ -8,7 +8,6 @@ import { FutureJourney } from "./sub-components/FutureJourney";
 import { TropicaMenuScreen, TropicaMenuScreenAnimations } from "./sub-components/Screen/Screen";
 import { Stack } from "./sub-components/Stack";
 
-export { TropicaMenuProvider } from "./Provider";
 
 type TropicaMenuProps = {
     debug?: boolean
