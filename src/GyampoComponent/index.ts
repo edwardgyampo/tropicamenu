@@ -1,0 +1,1 @@
+export { GyampoComponent } from "./GyampoComponent"
