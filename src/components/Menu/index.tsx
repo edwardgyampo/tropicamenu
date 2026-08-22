@@ -6,6 +6,7 @@ import { Stack } from "../Stack";
 import { FutureJourney } from "./FutureJourney";
 import "./index.css";
 import { PastJourney } from "./PastJourney";
+import { ScreenIds } from "../../lib/navigation";
 
 
 export type MenuProps = {
@@ -35,14 +36,14 @@ export const Menu = (props: MenuProps) => {
 
                 {navigation.isForward && navigation.exitItem && <Screen
                     key={navigation.exitItem?.name}
-                    id="BackScreen"
+                    id={ScreenIds.BackScreen}
                     item={navigation.exitItem}
                     containerRef={ref}
                     animation={ScreenAnimations.SlideOutToLeft} />}
 
                 {navigation.currentItem && <Screen
                     key={navigation.currentItem.name}
-                    id="CurrentScreen"
+                    id={ScreenIds.CurrentScreen}
                     item={navigation.currentItem}
                     containerRef={ref}
                     animation={
@@ -53,7 +54,7 @@ export const Menu = (props: MenuProps) => {
 
                 {navigation.isBackward && navigation.exitItem && <Screen
                     key={navigation.exitItem?.name}
-                    id="NextScreen"
+                    id={ScreenIds.NextScreen}
                     item={navigation.exitItem}
                     containerRef={ref}
                     animation={ScreenAnimations.SlideOutToRight} />}

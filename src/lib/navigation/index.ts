@@ -1,5 +1,13 @@
 import { type ListItem } from "../list";
 
+export const ScreenIds = {
+    "BackScreen": "BackScreen",
+    "CurrentScreen": "CurrentScreen",
+    "NextScreen": "NextScreen"
+} as const;
+
+export type ScreenId = typeof ScreenIds[keyof typeof ScreenIds];
+
 export const NavigationDirections = {
     Forward: "Forward",
     Backward: "Backward"
