@@ -1,10 +1,10 @@
 import { useContext, useRef } from "react";
 import { GyampoComponent } from "./GyampoComponent/GyampoComponent";
-import "./index.css";
 import { ScreenIds } from "./Navigation";
 import { TopicaMenuContext } from "./Provider";
-import { PastJourney } from "./sub-components/PastJourney/PastJourney";
+import "./TropicaMenu.css";
 import { FutureJourney } from "./sub-components/FutureJourney";
+import { PastJourney } from "./sub-components/PastJourney/PastJourney";
 import { TropicaMenuScreen, TropicaMenuScreenAnimations } from "./sub-components/Screen/Screen";
 import { Stack } from "./sub-components/Stack";
 
@@ -19,20 +19,20 @@ export const TropicaMenu = (props: TropicaMenuProps) => {
     const { navigation } = useContext(TopicaMenuContext);
 
     const classList = [
-        "Menu",
+        "TropicaMenu",
         navigation.direction ? "Navigation--animated" : "",
-        debug ? "Menu--debug" : "",
+        debug ? "TropicaMenu--debug" : "",
     ];
 
     return <GyampoComponent ref={ref} role="menu" classNameList={classList}>
-        <div className="Menu__wrapper">
-            <Stack direction="column" classNameList={["Menu__navigationPaths"]}>
+        <div className="TropicaMenu__wrapper">
+            <Stack direction="column" classNameList={["TropicaMenu__navigationPaths"]}>
                 <PastJourney />
 
                 <FutureJourney />
             </Stack>
 
-            <div className="Menu__screens">
+            <div className="TropicaMenu__screens">
 
                 {navigation.isForward && navigation.exitItem && <TropicaMenuScreen
                     key={navigation.exitItem.name}

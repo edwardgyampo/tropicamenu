@@ -1,3 +1,4 @@
+import "./Paper.css"
 import type { PropsWithChildren } from "react"
 import { GyampoComponent, type GyampoBaseComponentProps } from "../../GyampoComponent/GyampoComponent"
 
@@ -7,7 +8,7 @@ export const Paper = (props: GyampoBaseComponentProps<PropsWithChildren>) => {
     return <GyampoComponent
         classNameList={[
             ...classNameList,
-            "Paper"
+            "TropicaMenuPaper"
         ]}>
         {children}
     </GyampoComponent>

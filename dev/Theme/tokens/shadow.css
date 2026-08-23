@@ -1,6 +1,0 @@
-.Theme {
-    --shadow-sm: 0 .0625em .125em oklch(0% 0 0 / 0.08);
-    --shadow-md: 0 .25em .5em oklch(0% 0 0 / 0.10);
-    --shadow-lg: 0 .5em 1em oklch(0% 0 0 / 0.12);
-    --shadow-xl: 0 1em 2em oklch(0% 0 0 / 0.14);
-}

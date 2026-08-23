@@ -2,28 +2,27 @@
     display: flex;
     flex-direction: column;
     row-gap: .2em;
-    border-radius: var(--radius-md);
+    border-radius: .5em;
     overflow: hidden;
-    color: var(--color-on-primary);
 }
 
 .Breadcrumb__name {
     text-transform: uppercase;
-    font-size: var(--font-size-xs);
+    font-size: .75em;
     opacity: .6;
-    padding: var(--space-2);
+    padding: .5em;
 }
 
 .Breadcrumb__list {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: var(--space-1);
+    gap: .25em;
     width: 100%;
     overflow-x: scroll;
     flex-direction: row;
-    padding: var(--space-1) var(--space-1) var(--space-2) var(--space-1);
-    border-radius: var(--radius-md);
+    padding: .25em .25em .5em .25em;
+    border-radius: .5em;
 }
 
 .Breadcrumb__item {
@@ -33,5 +32,5 @@
 .Breadcrumb__button,
 .Breadcrumb__separator {
     display: inline-flex;
-    font-size: var(--font-size-xs);
+    font-size: .75em;
 }

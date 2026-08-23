@@ -1,0 +1,103 @@
+.TropicaMenu {
+    background-color: oklch(24% 0.06 250deg);
+    border-radius: 0.75em;
+    color: oklch(99% 0.04 250deg);
+    scrollbar-color: oklch(56% .06 250deg) oklch(24% .06 250deg);
+}
+
+.TropicaMenu,
+.TropicaMenu__navigationPaths,
+.TropicaMenu__builtinList,
+.TropicaMenu :where(.TropicaMenuScreen)
+{
+    border-radius: .75em;
+}
+
+.TropicaMenu:not(:where(.TropicaMenu--debug)) {
+    overflow: hidden;
+}
+
+.TropicaMenu--debug :where(.TropicaMenuScreen),
+.TropicaMenu--debug :where(.TropicaMenu__navigationPaths) {
+    border: 1px solid transparent;
+}
+
+.TropicaMenu--debug :where(#BackScreen) {
+    border-color: hsl(0 100% 60%);
+}
+
+.TropicaMenu--debug :where(#CurrentScreen) {
+    border-color: hsl(227 100% 60%);
+}
+
+.TropicaMenu--debug :where(#NextScreen) {
+    border-color: hsl(103, 100%, 60%);
+}
+
+.TropicaMenu--debug :where(.TropicaMenu__navigationPaths) {
+    border-color: oklch(98% 0.15 100);
+}
+
+.TropicaMenu__navigationPaths {
+    gap: .5em;
+    padding: .5em;
+}
+
+.TropicaMenu:not(.TropicaMenu--debug) :where(.TropicaMenu__navigationPaths) {
+    display: none;
+}
+
+.TropicaMenu__screens {
+    transition-duration: 400ms;
+    transition-timing-function: ease-out;
+}
+
+.TropicaMenu__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+.TropicaMenu__screens {
+    position: relative;
+    display: flex;
+    width: var(--CurrentScreen-width, 0px);
+    height: var(--CurrentScreen-height, 0px);
+    transition-property: width, height;
+}
+
+.TropicaMenu__builtinList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+}
+
+.TropicaMenu__item {
+    width: 100%;
+}
+
+.TropicaMenu__itemButton {
+    width: 100%;
+}
+
+.TropicaMenu__title {
+    padding: .5em;
+    text-align: center;
+    text-transform: capitalize;
+    border-width: .125em 0;
+    border-style: solid;
+    border-color: oklch(48% .06 160deg);
+    color: oklch(87% .08 160deg)
+}
+
+.TropicaMenu__breadcrumbs {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+.PastJourney :where(.Breadcrumb__list) {
+    padding-left: 50%;
+    flex-direction: row-reverse;
+}

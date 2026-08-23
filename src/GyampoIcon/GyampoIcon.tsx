@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { GyampoComponent, type GyampoBaseComponentProps } from "../GyampoComponent/GyampoComponent";
-import "./index.css";
+import "./GyampoIcon.css";
 
 export type GyampoIconComponentProps = GyampoBaseComponentProps<{
     icon: string

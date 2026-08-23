@@ -1,19 +1,19 @@
 import { useContext } from "react";
 import type { NavigationItem } from "../../Navigation";
 import { TopicaMenuContext } from "../../Provider";
-import { Button, ButtonVariants } from "../Button/Button";
+import { TropicaMenuButton, TropicaMenuButtonVariants } from "../Button/Button";
 import { GyampoIcon } from "../../GyampoIcon/GyampoIcon";
 
 
 export const BackButton = ({ item }: { item?: NavigationItem }) => {
     const { navigation } = useContext(TopicaMenuContext);
 
-    return <Button
+    return <TropicaMenuButton
         {...item?.name
-            ? { text: item?.name, variant: ButtonVariants.StandardButton }
-            : { variant: ButtonVariants.IconButton }
+            ? { text: item?.name, variant: TropicaMenuButtonVariants.StandardButton }
+            : { variant: TropicaMenuButtonVariants.IconButton }
         }
-        classNameList={["Menu__BackButton"]}
+        classNameList={["TropicaMenu__BackButton"]}
         PrimaryIcon={<GyampoIcon icon={"mdi:navigate-before"}/>}
         onClick={() => navigation.goBack()}
         disabled={!navigation.hasPastItems} />

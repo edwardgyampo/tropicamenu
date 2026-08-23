@@ -15,7 +15,7 @@ export const NextButton = ({ item }: { item?: NavigationItem }) => {
             }
             : { variant: ButtonVariants.IconButton }
         }
-        classNameList={["Menu__NextButton"]}
+        classNameList={["TropicaMenu__NextButton"]}
         PrimaryIcon={<GyampoIcon icon={"mdi:navigate-next"}/>}
         onClick={() => navigation.goForward()}
         disabled={!navigation.hasFutureItems} />

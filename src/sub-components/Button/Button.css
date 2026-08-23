@@ -1,0 +1,71 @@
+.TropicaMenuButton {
+    user-select: none;
+    font-size: inherit;
+    display: inline-flex;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25em 0.75em;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-width: .125em;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 1em;
+    background-color: transparent;
+    transition-property: color, background-color, border-color;
+    transition-duration: 300ms;
+    color: oklch(99% 0.04 250deg);
+}
+
+.TropicaMenuButton :where(*) {
+    pointer-events: none;
+}
+
+.TropicaMenuButton__icon {
+    display: inline-flex;
+    font-size: 1.5em;
+}
+
+.TropicaMenuButton__icon:not(:has(svg)) {
+    display: none;
+}
+
+.TropicaMenuButton__text {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.TropicaMenuButton:hover {
+    background-color: oklch(87% 0.08 160deg);
+    color: oklch(12% 0.04 160deg);
+}
+
+.TropicaMenuButton:focus-visible {
+    border-color: oklch(87% 0.04 160deg);
+}
+
+.TropicaMenuButton:active {
+    background-color: oklch(80% 0.06 160deg);
+    color: oklch(8% 0.04 160deg);
+    border-color: transparent;
+}
+
+.TropicaMenuButton:disabled {
+    pointer-events: none;
+    background-color: oklch(18% 0.04 250deg);
+    color: oklch(24% 0.04 250deg);
+}
+
+.TropicaMenuButton--TextButton {
+    justify-content: center;
+}
+
+.TropicaMenuButton--StandardButtonReversed {
+    flex-direction: row-reverse;
+}
+
+.TropicaMenuButton--IconButton {
+    padding: 0;
+}

@@ -6,8 +6,8 @@ import { BackButton } from "../BackButton";
 import { HomeButton } from "../HomeButton";
 import { NextButton } from "../NextButton";
 import { TopicaMenuOptions } from "../Options/Options";
-import { Stack } from "../Stack";
-import "./index.css";
+import { Stack } from "../Stack/Stack";
+import "./Screen.css";
 
 export const TropicaMenuScreenAnimations = {
     SlideInFromRight: "SlideInFromRight",
@@ -64,7 +64,7 @@ export const TropicaMenuScreen = (props: TropicaMenuScreenComponentProps) => {
 
     const classNames = [
         ...classNameList,
-        "Screen",
+        "TropicaMenuScreen",
         animation
     ];
 
@@ -87,7 +87,7 @@ export const TropicaMenuScreen = (props: TropicaMenuScreenComponentProps) => {
 
         </Stack>
 
-        <p className="Menu__title">
+        <p className="TropicaMenu__title">
             {item.name}
         </p>
 

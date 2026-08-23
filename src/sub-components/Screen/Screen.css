@@ -1,37 +1,36 @@
-.Screen {
+.TropicaMenuScreen {
     position: absolute;
     top: 0;
     min-width: max-content;
     display: flex;
     flex-direction: column;
-    border-width: var(--border-width-medium);
     overflow: hidden;
 }
 
 .Screen__quickActions {
     display: flex;
     justify-content: center;
-    padding: var(--space-2);
-    font-size: var(--font-size-xs);
+    padding: 0.5em;
+    font-size: 0.75em;
 }
 
 .Screen__navigation {
-    padding: var(--space-2);
+    padding: 0.5em;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-6);
+    gap: 2em;
 }
 
-.Screen {
-    animation-duration: var(--duration-slow);
-    animation-timing-function: var(--ease-standard);
+.TropicaMenuScreen {
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
 
-.Screen:not(.Navigation--animated .Screen) {
+.TropicaMenuScreen:not(.Navigation--animated .TropicaMenuScreen) {
     animation-name: none;
 }
 

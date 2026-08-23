@@ -2,7 +2,7 @@ import type { PropsWithChildren } from "react";
 import type { ListItem } from "../../List";
 import { GyampoComponent, type GyampoBaseComponentProps } from "../../GyampoComponent/GyampoComponent";
 import { GyampoIcon } from "../../GyampoIcon/GyampoIcon";
-import "./index.css";
+import "./Breadcrumb.css";
 
 export interface BreadcrumbProps extends GyampoBaseComponentProps {
     name?: string,

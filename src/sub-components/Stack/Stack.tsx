@@ -1,5 +1,5 @@
 import { GyampoComponent, type GyampoComponentProps } from "../../GyampoComponent/GyampoComponent"
-import "./index.css"
+import "./Stack.css"
 
 export const Stack = ({
     direction,
