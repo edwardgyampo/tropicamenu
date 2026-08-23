@@ -1,1 +1,1 @@
-export { FutureJourney } from "./FutureJourney"
+export { TropicaMenuFutureJourney } from "./FutureJourney"

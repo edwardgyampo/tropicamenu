@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { TopicaMenuContext } from "../../Provider";
-import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
+import { TropicaMenuContext } from "../../Provider";
+import { TropicaMenuBreadcrumb } from "../Breadcrumb/Breadcrumb";
 import { TropicaMenuButton } from "../Button/Button";
 
-export const PastJourney = () => {
-    const { navigation } = useContext(TopicaMenuContext);
+export const TropicaMenuPastJourney = () => {
+    const { navigation } = useContext(TropicaMenuContext);
 
-    return <Breadcrumb
+    return <TropicaMenuBreadcrumb
         name={"past"}
-        classNameList={["PastJourney"]}
+        classNameList={["TropicaMenuPastJourney"]}
         items={navigation.past.toReversed().map(item => item)}
         renderItem={item =>
             <TropicaMenuButton

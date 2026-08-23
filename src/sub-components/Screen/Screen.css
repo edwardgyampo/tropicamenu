@@ -7,14 +7,14 @@
     overflow: hidden;
 }
 
-.Screen__quickActions {
+.TropicaMenuScreen__quickActions {
     display: flex;
     justify-content: center;
     padding: 0.5em;
     font-size: 0.75em;
 }
 
-.Screen__navigation {
+.TropicaMenuScreen__navigation {
     padding: 0.5em;
     align-items: center;
     justify-content: space-between;
@@ -22,7 +22,7 @@
 }
 
 .TropicaMenuScreen {
-    animation-duration: 400ms;
+    animation-duration: 300ms;
     animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
     animation-iteration-count: 1;
     animation-direction: normal;
@@ -34,24 +34,24 @@
     animation-name: none;
 }
 
-.SlideOutToRight {
-    animation-name: SlideOutToRight;
+.TropicaMenuSlideOutToRight {
+    animation-name: TropicaMenuSlideOutToRight;
 }
 
-.SlideInFromRight {
-    animation-name: SlideInFromRight;
+.TropicaMenuSlideInFromRight {
+    animation-name: TropicaMenuSlideInFromRight;
 }
 
-.SlideOutToLeft {
-    animation-name: SlideOutToLeft;
+.TropicaMenuSlideOutToLeft {
+    animation-name: TropicaMenuSlideOutToLeft;
 }
 
-.SlideInFromLeft {
-    animation-name: SlideInFromLeft;
+.TropicaMenuSlideInFromLeft {
+    animation-name: TropicaMenuSlideInFromLeft;
 }
 
 
-@keyframes SlideInFromLeft {
+@keyframes TropicaMenuSlideInFromLeft {
     0% {
         translate: calc(-1 * max(var(--CurrentScreen-width, 0px), var(--BackScreen-width, 0px)));
     }
@@ -61,7 +61,7 @@
     }
 }
 
-@keyframes SlideOutToRight {
+@keyframes TropicaMenuSlideOutToRight {
     0% {
         translate: 0;
     }
@@ -71,7 +71,7 @@
     }
 }
 
-@keyframes SlideInFromRight {
+@keyframes TropicaMenuSlideInFromRight {
     0% {
         translate: calc(1 * max(var(--CurrentScreen-width, 0px), var(--BackScreen-width, 0px)));
     }
@@ -81,7 +81,7 @@
     }
 }
 
-@keyframes SlideOutToLeft {
+@keyframes TropicaMenuSlideOutToLeft {
     0% {
         translate: 0px;
     }

@@ -1,1 +1,1 @@
-export { Paper } from "./Paper"
+export { TropicaMenuPaper } from "./Paper"

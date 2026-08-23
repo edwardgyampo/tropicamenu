@@ -1,6 +1,6 @@
 import { useContext, useMemo, type MouseEventHandler } from "react";
 import type { ListItem } from "../../List";
-import { TopicaMenuContext } from "../../Provider";
+import { TropicaMenuContext } from "../../Provider";
 import { TropicaMenuButton, TropicaMenuButtonVariants, type TropicaMenuButtonProps } from "../Button/Button";
 import { GyampoIcon } from "../../GyampoIcon/GyampoIcon";
 
@@ -8,9 +8,9 @@ export type TropicaMenuOptionsProps = {
     items?: ListItem[]
 };
 
-export const TopicaMenuOptions = (props: TropicaMenuOptionsProps) => {
+export const TropicaMenuOptions = (props: TropicaMenuOptionsProps) => {
     const { items = [] } = props;
-    const { navigation } = useContext(TopicaMenuContext);
+    const { navigation } = useContext(TropicaMenuContext);
 
     const onClickItem: MouseEventHandler = e => {
         navigation.select({

@@ -3,11 +3,12 @@ import { TropicaMenuNavigation, type NavigationItem } from "./Navigation";
 
 export type TropicaMenuContextValue = { navigation: TropicaMenuNavigation };
 
-export const TopicaMenuContext = createContext<TropicaMenuContextValue>({
+export const TropicaMenuContext = createContext<TropicaMenuContextValue>({
     navigation: new TropicaMenuNavigation({ name: "" })
 });
 
 type TropicaMenuProviderProps = PropsWithChildren<{ menu: NavigationItem }>;
+
 
 export const TropicaMenuProvider = ({ children, menu }: TropicaMenuProviderProps) => {
     const navigation = new TropicaMenuNavigation(menu);
@@ -29,7 +30,7 @@ export const TropicaMenuProvider = ({ children, menu }: TropicaMenuProviderProps
 
     }, [navigation]);
 
-    return <TopicaMenuContext.Provider value={state}>
+    return <TropicaMenuContext.Provider value={state}>
         {children}
-    </TopicaMenuContext.Provider>;
+    </TropicaMenuContext.Provider>;
 }

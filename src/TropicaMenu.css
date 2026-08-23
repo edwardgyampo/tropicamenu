@@ -48,7 +48,7 @@
 }
 
 .TropicaMenu__screens {
-    transition-duration: 400ms;
+    transition-duration: 300ms;
     transition-timing-function: ease-out;
 }
 
@@ -97,7 +97,7 @@
     row-gap: .5em;
 }
 
-.PastJourney :where(.Breadcrumb__list) {
+.PastJourney :where(.TropicaMenuBreadcrumb__list) {
     padding-left: 50%;
     flex-direction: row-reverse;
 }

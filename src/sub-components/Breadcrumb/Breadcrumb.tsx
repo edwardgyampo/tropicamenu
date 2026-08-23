@@ -4,13 +4,24 @@ import { GyampoComponent, type GyampoBaseComponentProps } from "../../GyampoComp
 import { GyampoIcon } from "../../GyampoIcon/GyampoIcon";
 import "./Breadcrumb.css";
 
-export interface BreadcrumbProps extends GyampoBaseComponentProps {
+export interface TropicaMenuBreadcrumbProps extends GyampoBaseComponentProps {
     name?: string,
     items: ListItem[],
     renderItem: (item: ListItem) => React.JSX.Element
 };
 
-export const Breadcrumb = (props: BreadcrumbProps) => {
+const TropicaMenuBreadcrumbItem = ({ children }: PropsWithChildren) => {
+    return <GyampoComponent
+        as="li"
+        classNameList={[
+            "TropicaMenuBreadcrumb__item",
+            "TropicaMenuBreadcrumb__button"
+        ]}>
+        {children}
+    </ GyampoComponent>;
+};
+
+export const TropicaMenuBreadcrumb = (props: TropicaMenuBreadcrumbProps) => {
     const {
         classNameList = [],
         name,
@@ -18,44 +29,35 @@ export const Breadcrumb = (props: BreadcrumbProps) => {
         renderItem
     } = props;
 
-    const Item = ({ children }: PropsWithChildren) =>
-        <GyampoComponent
-            as="li"
-            classNameList={[
-                "Breadcrumb__item",
-                "Breadcrumb__button"
-            ]}>
-            {children}
-        </ GyampoComponent>
 
-    const BreadcrumbItems = () => items.map((item, index) => {
+    const TropicaMenuBreadcrumbItems = () => items.map((item, index) => {
         return index > 0
             ? [
-                <Item key={"s_" + index}>
-                    <GyampoIcon icon={"mdi:navigate-next"}/>
-                </Item>,
-                <Item key={"i_" + index}>
+                <TropicaMenuBreadcrumbItem key={"s_" + index}>
+                    <GyampoIcon icon={"mdi:navigate-next"} />
+                </TropicaMenuBreadcrumbItem>,
+                <TropicaMenuBreadcrumbItem key={"i_" + index}>
                     {renderItem(item)}
-                </Item>
+                </TropicaMenuBreadcrumbItem>
             ]
-            : [<Item key={index}>
+            : [<TropicaMenuBreadcrumbItem key={index}>
                 {renderItem(item)}
-            </Item>]
+            </TropicaMenuBreadcrumbItem>]
     });
 
     return <GyampoComponent
         classNameList={[
             ...classNameList,
-            "Breadcrumb"
+            "TropicaMenuBreadcrumb"
         ]}>
 
-        <span className="Breadcrumb__name">
+        <span className="TropicaMenuBreadcrumb__name">
             {name}
         </span>
 
-        <ul className="Breadcrumb__list">
-            
-            <BreadcrumbItems />
+        <ul className="TropicaMenuBreadcrumb__list">
+
+            <TropicaMenuBreadcrumbItems />
 
         </ul>
     </GyampoComponent >

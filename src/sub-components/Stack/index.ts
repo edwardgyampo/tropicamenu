@@ -1,1 +1,1 @@
-export { Stack } from "./Stack"
+export { TropicaMenuStack } from "./Stack"

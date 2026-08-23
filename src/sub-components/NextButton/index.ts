@@ -1,1 +1,1 @@
-export { NextButton } from "./NextButton"
+export { TropicaMenuNextButton } from "./NextButton"

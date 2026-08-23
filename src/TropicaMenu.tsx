@@ -1,12 +1,12 @@
 import { useContext, useRef } from "react";
 import { GyampoComponent } from "./GyampoComponent/GyampoComponent";
 import { ScreenIds } from "./Navigation";
-import { TopicaMenuContext } from "./Provider";
+import { TropicaMenuContext } from "./Provider";
 import "./TropicaMenu.css";
-import { FutureJourney } from "./sub-components/FutureJourney";
-import { PastJourney } from "./sub-components/PastJourney/PastJourney";
+import { TropicaMenuFutureJourney } from "./sub-components/FutureJourney";
+import { TropicaMenuPastJourney } from "./sub-components/PastJourney/PastJourney";
 import { TropicaMenuScreen, TropicaMenuScreenAnimations } from "./sub-components/Screen/Screen";
-import { Stack } from "./sub-components/Stack";
+import { TropicaMenuStack } from "./sub-components/Stack";
 
 
 type TropicaMenuProps = {
@@ -16,7 +16,7 @@ type TropicaMenuProps = {
 export const TropicaMenu = (props: TropicaMenuProps) => {
     const { debug = false } = props;
     const ref = useRef<HTMLDivElement>(null);
-    const { navigation } = useContext(TopicaMenuContext);
+    const { navigation } = useContext(TropicaMenuContext);
 
     const classList = [
         "TropicaMenu",
@@ -26,11 +26,11 @@ export const TropicaMenu = (props: TropicaMenuProps) => {
 
     return <GyampoComponent ref={ref} role="menu" classNameList={classList}>
         <div className="TropicaMenu__wrapper">
-            <Stack direction="column" classNameList={["TropicaMenu__navigationPaths"]}>
-                <PastJourney />
+            <TropicaMenuStack direction="column" classNameList={["TropicaMenu__navigationPaths"]}>
+                <TropicaMenuPastJourney />
 
-                <FutureJourney />
-            </Stack>
+                <TropicaMenuFutureJourney />
+            </TropicaMenuStack>
 
             <div className="TropicaMenu__screens">
 
@@ -39,7 +39,7 @@ export const TropicaMenu = (props: TropicaMenuProps) => {
                     id={ScreenIds.BackScreen}
                     item={navigation.exitItem}
                     containerRef={ref}
-                    animation={TropicaMenuScreenAnimations.SlideOutToLeft} />}
+                    animation={TropicaMenuScreenAnimations.TropicaMenuSlideOutToLeft} />}
 
                 {navigation.currentItem && <TropicaMenuScreen
                     key={navigation.currentItem.name}
@@ -48,8 +48,8 @@ export const TropicaMenu = (props: TropicaMenuProps) => {
                     containerRef={ref}
                     animation={
                         navigation.isForward
-                            ? TropicaMenuScreenAnimations.SlideInFromRight
-                            : TropicaMenuScreenAnimations.SlideInFromLeft
+                            ? TropicaMenuScreenAnimations.TropicaMenuSlideInFromRight
+                            : TropicaMenuScreenAnimations.TropicaMenuSlideInFromLeft
                     } />}
 
                 {navigation.isBackward && navigation.exitItem && <TropicaMenuScreen
@@ -57,7 +57,7 @@ export const TropicaMenu = (props: TropicaMenuProps) => {
                     id={ScreenIds.NextScreen}
                     item={navigation.exitItem}
                     containerRef={ref}
-                    animation={TropicaMenuScreenAnimations.SlideOutToRight} />}
+                    animation={TropicaMenuScreenAnimations.TropicaMenuSlideOutToRight} />}
 
             </div>
         </div>

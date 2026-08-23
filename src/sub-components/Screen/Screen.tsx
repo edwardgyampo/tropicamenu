@@ -1,19 +1,19 @@
 import { useContext, useLayoutEffect, useRef, type RefObject } from "react";
 import type { NavigationItem } from "../../Navigation";
-import { TopicaMenuContext } from "../../Provider";
+import { TropicaMenuContext } from "../../Provider";
 import { GyampoComponent, type GyampoComponentProps } from "../../GyampoComponent/GyampoComponent";
-import { BackButton } from "../BackButton";
-import { HomeButton } from "../HomeButton";
-import { NextButton } from "../NextButton";
-import { TopicaMenuOptions } from "../Options/Options";
-import { Stack } from "../Stack/Stack";
+import { TropicaMenuBackButton } from "../BackButton";
+import { TropicaMenuHomeButton } from "../HomeButton";
+import { TropicaMenuNextButton } from "../NextButton";
+import { TropicaMenuOptions } from "../Options";
+import { TropicaMenuStack } from "../Stack";
 import "./Screen.css";
 
 export const TropicaMenuScreenAnimations = {
-    SlideInFromRight: "SlideInFromRight",
-    SlideInFromLeft: "SlideInFromLeft",
-    SlideOutToLeft: "SlideOutToLeft",
-    SlideOutToRight: "SlideOutToRight"
+    TropicaMenuSlideInFromRight: "TropicaMenuSlideInFromRight",
+    TropicaMenuSlideInFromLeft: "TropicaMenuSlideInFromLeft",
+    TropicaMenuSlideOutToLeft: "TropicaMenuSlideOutToLeft",
+    TropicaMenuSlideOutToRight: "TropicaMenuSlideOutToRight"
 } as const;
 
 export type TropicaMenuScreenAnimation = typeof TropicaMenuScreenAnimations[keyof typeof TropicaMenuScreenAnimations];
@@ -34,7 +34,7 @@ export const TropicaMenuScreen = (props: TropicaMenuScreenComponentProps) => {
     } = props;
 
     const ref = useRef<HTMLDivElement>(null);
-    const { navigation } = useContext(TopicaMenuContext);
+    const { navigation } = useContext(TropicaMenuContext);
 
     useLayoutEffect(() => {
         const updateSize = () => {
@@ -73,25 +73,25 @@ export const TropicaMenuScreen = (props: TropicaMenuScreenComponentProps) => {
         ref={ref}
         classNameList={classNames}>
 
-        <GyampoComponent classNameList={["Screen__quickActions"]}>
+        <GyampoComponent classNameList={["TropicaMenuScreen__quickActions"]}>
 
-            <HomeButton item={props.item} />
+            <TropicaMenuHomeButton item={props.item} />
 
         </GyampoComponent>
 
-        <Stack direction="row" classNameList={["Screen__navigation"]}>
+        <TropicaMenuStack direction="row" classNameList={["TropicaMenuScreen__navigation"]}>
 
-            <BackButton item={item.backItem} />
+            <TropicaMenuBackButton item={item.backItem} />
 
-            <NextButton item={item.nextItem} />
+            <TropicaMenuNextButton item={item.nextItem} />
 
-        </Stack>
+        </TropicaMenuStack>
 
         <p className="TropicaMenu__title">
             {item.name}
         </p>
 
-        <TopicaMenuOptions items={props.item.list} />
+        <TropicaMenuOptions items={props.item.list} />
 
     </GyampoComponent>
 }

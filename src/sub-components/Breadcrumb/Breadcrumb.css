@@ -1,4 +1,4 @@
-.Breadcrumb {
+.TropicaMenuBreadcrumb {
     display: flex;
     flex-direction: column;
     row-gap: .2em;
@@ -6,14 +6,14 @@
     overflow: hidden;
 }
 
-.Breadcrumb__name {
+.TropicaMenuBreadcrumb__name {
     text-transform: uppercase;
     font-size: .75em;
     opacity: .6;
     padding: .5em;
 }
 
-.Breadcrumb__list {
+.TropicaMenuBreadcrumb__list {
     display: flex;
     align-items: center;
     list-style: none;
@@ -25,12 +25,12 @@
     border-radius: .5em;
 }
 
-.Breadcrumb__item {
+.TropicaMenuBreadcrumb__item {
     flex-shrink: 0;
 }
 
-.Breadcrumb__button,
-.Breadcrumb__separator {
+.TropicaMenuBreadcrumb__button,
+.TropicaMenuBreadcrumb__separator {
     display: inline-flex;
     font-size: .75em;
 }

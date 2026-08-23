@@ -15,13 +15,13 @@ type TropicaMenuButtonVariants = {
     [k in keyof typeof TropicaMenuButtonVariants]: typeof TropicaMenuButtonVariants[k]
 };
 
-export type ButtonVariant = TropicaMenuButtonVariants[keyof TropicaMenuButtonVariants];
+export type TropicaMenuButtonVariant = TropicaMenuButtonVariants[keyof TropicaMenuButtonVariants];
 
 export interface TropicaMenuButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     text?: string;
     PrimaryIcon?: ReactElement<GyampoIconComponent>;
     SecondaryIcon?: ReactElement<GyampoIconComponent>;
-    variant?: ButtonVariant;
+    variant?: TropicaMenuButtonVariant;
 };
 
 export const TropicaMenuButton = (props: GyampoBaseComponentProps<TropicaMenuButtonProps>) => {

@@ -1,1 +1,1 @@
-export { HomeButton } from "./HomeButton"
+export { TropicaMenuHomeButton } from "./HomeButton"

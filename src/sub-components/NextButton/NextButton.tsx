@@ -1,21 +1,21 @@
 import { useContext } from "react";
 import type { NavigationItem } from "../../Navigation";
-import { TopicaMenuContext } from "../../Provider";
-import { Button, ButtonVariants } from "../Button";
+import { TropicaMenuContext } from "../../Provider";
+import { TropicaMenuButton, TropicaMenuButtonVariants } from "../Button";
 import { GyampoIcon } from "../../GyampoIcon";
 
-export const NextButton = ({ item }: { item?: NavigationItem }) => {
-    const { navigation } = useContext(TopicaMenuContext);
+export const TropicaMenuNextButton = ({ item }: { item?: NavigationItem }) => {
+    const { navigation } = useContext(TropicaMenuContext);
 
-    return <Button
+    return <TropicaMenuButton
         {...item?.name
             ? {
                 text: item?.name,
-                variant: ButtonVariants.StandardButtonReversed
+                variant: TropicaMenuButtonVariants.StandardButtonReversed
             }
-            : { variant: ButtonVariants.IconButton }
+            : { variant: TropicaMenuButtonVariants.IconButton }
         }
-        classNameList={["TropicaMenu__NextButton"]}
+        classNameList={["TropicaMenuNextButton"]}
         PrimaryIcon={<GyampoIcon icon={"mdi:navigate-next"}/>}
         onClick={() => navigation.goForward()}
         disabled={!navigation.hasFutureItems} />

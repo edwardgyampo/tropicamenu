@@ -1,19 +1,19 @@
-.Stack {
+.TropicaMenuStack {
     display: flex;
 }
 
-.Stack--row {
+.TropicaMenuStack--row {
     flex-direction: row;
 }
 
-.Stack--row-reverse {
+.TropicaMenuStack--row-reverse {
     flex-direction: row-reverse;
 }
 
-.Stack--column {
+.TropicaMenuStack--column {
     flex-direction: column;
 }
 
-.Stack--column-reverse {
+.TropicaMenuStack--column-reverse {
     flex-direction: column-reverse;
 }

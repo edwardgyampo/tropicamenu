@@ -1,0 +1,1 @@
+export { TropicaMenuOptions } from "./Options";

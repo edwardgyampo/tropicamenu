@@ -1,7 +1,7 @@
 import { GyampoComponent, type GyampoComponentProps } from "../../GyampoComponent/GyampoComponent"
 import "./Stack.css"
 
-export const Stack = ({
+export const TropicaMenuStack = ({
     direction,
     classNameList = [],
     children,
@@ -14,8 +14,8 @@ export const Stack = ({
         {...remainderProps}
         classNameList={[
             ...classNameList,
-            "Stack",
-            `Stack--${direction}`
+            "TropicaMenuStack",
+            `TropicaMenuStack--${direction}`
         ]}>
         {children}
     </GyampoComponent>

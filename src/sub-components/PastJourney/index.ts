@@ -1,1 +1,1 @@
-export { PastJourney } from "./PastJourney"
+export { TropicaMenuPastJourney } from "./PastJourney"

@@ -1,2 +1,2 @@
-export { Breadcrumb } from "./Breadcrumb"
-export { BreadcrumbOption } from "./Option"
+export { TropicaMenuBreadcrumb } from "./Breadcrumb"
+export { TropicaMenuBreadcrumbOption } from "./Option"

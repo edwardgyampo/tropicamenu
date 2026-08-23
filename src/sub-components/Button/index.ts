@@ -1,1 +1,1 @@
-export { TropicaMenuButton as Button, TropicaMenuButtonVariants as ButtonVariants } from "./Button"
+export { TropicaMenuButton, TropicaMenuButtonVariants } from "./Button"

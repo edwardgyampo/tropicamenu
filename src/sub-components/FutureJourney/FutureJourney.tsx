@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import { TopicaMenuContext } from "../../Provider";
-import { Breadcrumb, BreadcrumbOption } from "../Breadcrumb";
+import { TropicaMenuContext } from "../../Provider";
+import { TropicaMenuBreadcrumb, TropicaMenuBreadcrumbOption } from "../Breadcrumb";
 
-export const FutureJourney = () => {
-    const { navigation } = useContext(TopicaMenuContext);
+export const TropicaMenuFutureJourney = () => {
+    const { navigation } = useContext(TropicaMenuContext);
 
-    return <Breadcrumb
-        classNameList={["FutureJourney"]}
+    return <TropicaMenuBreadcrumb
+        classNameList={["TropicaMenuFutureJourney"]}
         name={"future"}
         items={navigation.future.toReversed().map(item => item)}
-        renderItem={item => <BreadcrumbOption item={item}/>} />
+        renderItem={item => <TropicaMenuBreadcrumbOption item={item}/>} />
 }
