@@ -10,10 +10,10 @@ import { TropicaMenuStack } from "../Stack";
 import "./Screen.css";
 
 export const TropicaMenuScreenAnimations = {
-    TropicaMenuSlideInFromRight: "TropicaMenuSlideInFromRight",
-    TropicaMenuSlideInFromLeft: "TropicaMenuSlideInFromLeft",
-    TropicaMenuSlideOutToLeft: "TropicaMenuSlideOutToLeft",
-    TropicaMenuSlideOutToRight: "TropicaMenuSlideOutToRight"
+    SlideInFromRight: "TropicaMenuSlideInFromRight",
+    SlideInFromLeft: "TropicaMenuSlideInFromLeft",
+    SlideOutToLeft: "TropicaMenuSlideOutToLeft",
+    SlideOutToRight: "TropicaMenuSlideOutToRight"
 } as const;
 
 export type TropicaMenuScreenAnimation = typeof TropicaMenuScreenAnimations[keyof typeof TropicaMenuScreenAnimations];

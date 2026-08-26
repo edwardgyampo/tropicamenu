@@ -39,7 +39,7 @@ export const TropicaMenu = (props: TropicaMenuProps) => {
                     id={ScreenIds.BackScreen}
                     item={navigation.exitItem}
                     containerRef={ref}
-                    animation={TropicaMenuScreenAnimations.TropicaMenuSlideOutToLeft} />}
+                    animation={TropicaMenuScreenAnimations.SlideOutToLeft} />}
 
                 {navigation.currentItem && <TropicaMenuScreen
                     key={navigation.currentItem.name}
@@ -48,8 +48,8 @@ export const TropicaMenu = (props: TropicaMenuProps) => {
                     containerRef={ref}
                     animation={
                         navigation.isForward
-                            ? TropicaMenuScreenAnimations.TropicaMenuSlideInFromRight
-                            : TropicaMenuScreenAnimations.TropicaMenuSlideInFromLeft
+                            ? TropicaMenuScreenAnimations.SlideInFromRight
+                            : TropicaMenuScreenAnimations.SlideInFromLeft
                     } />}
 
                 {navigation.isBackward && navigation.exitItem && <TropicaMenuScreen
@@ -57,7 +57,7 @@ export const TropicaMenu = (props: TropicaMenuProps) => {
                     id={ScreenIds.NextScreen}
                     item={navigation.exitItem}
                     containerRef={ref}
-                    animation={TropicaMenuScreenAnimations.TropicaMenuSlideOutToRight} />}
+                    animation={TropicaMenuScreenAnimations.SlideOutToRight} />}
 
             </div>
         </div>
